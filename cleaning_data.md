@@ -17,7 +17,7 @@ SELECT TO_DATE(CAST(date AS VARCHAR(255)), 'YYYYMMDD')
 FROM analytics
 ```
 
-3. It appears that there is a space in front of the names of various products under the sales report.  To remove the spaces for a linear view:
+3. Noticebly, it appears that there is a space in front of the names of various products under the sales report.  To remove the spaces leading, trailing, and in between text, it will be as follows:
 
    ```sql
    SELECT TRIM(from name), name
