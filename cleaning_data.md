@@ -10,7 +10,7 @@ SELECT unit_price / 1000000 AS revised_unit_price
 FROM analytics
 ```
 
-2. The 'date' column importing the CSVs are not in the PostgreSQL format.  The datatype is an 'INT', so it will need to be formmated as follows:
+2. The 'date' column importing the CSVs is not in the PostgreSQL date format.  The datatype is an 'INT', so it will need to be converted from 'INT' to 'CHAR' then 'DATE' as follows:
 
 ```sql
 SELECT TO_DATE(CAST(date AS VARCHAR(255)), 'YYYYMMDD')
