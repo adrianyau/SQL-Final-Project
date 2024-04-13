@@ -58,7 +58,7 @@ Below, provide the SQL queries you used to clean your data.
    FROM cte_city
    ```
 
-8. There are some products that cannot be categorized, so values were NULLED as follows:
+7. There are some products that cannot be categorized, so values were NULLED as follows:
 
    ```sql
    WITH v2_product_category_cte AS (
@@ -69,7 +69,7 @@ Below, provide the SQL queries you used to clean your data.
    FROM v2_product_category_cte
    ```
 
-9. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
+8. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
 
    ```sql
    	SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
@@ -79,14 +79,14 @@ Below, provide the SQL queries you used to clean your data.
 	FROM analytics
    ```
 
-10. To nullify a product variant that cannot be set, it is as follows:
+9. To nullify a product variant that cannot be set, it is as follows:
 
     ```sql
     SELECT NULLIF(product_variant, '(not set)') AS product_variant
     FROM all_sessions
     ```
 
-11. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
+10. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
 
     ```sql
     SELECT TRIM(trailing '/' from page_path_level1) AS page_path_level1
@@ -94,7 +94,7 @@ Below, provide the SQL queries you used to clean your data.
     GROUP BY page_path_level1
     ```
 
-12. 
+11. 
 
     
 
