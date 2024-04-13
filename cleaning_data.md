@@ -36,3 +36,12 @@ FROM all_sessions
 SELECT DISTINCT *
 FROM analytics
 ```
+
+5. Some countries are not set, so NULL was applied as per following:
+
+   ```sql
+   SELECT NULLIF(country,'(not set)') AS country -- NULL if countries are not set.
+	FROM all_sessions
+   ```
+
+   
