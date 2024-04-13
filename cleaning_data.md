@@ -67,8 +67,11 @@ FROM analytics
 	FROM v2_product_category_cte
    ```
 
-   
+8. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
 
-   
+   ```sql
+   	SELECT REPLACE(channel_grouping, '(Other)', 'Other')
+   	FROM all_sessions
+   ```
 
    
