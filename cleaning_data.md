@@ -7,24 +7,24 @@ Below, provide the SQL queries you used to clean your data.
 
 
 1. As per cleaning hint, the unit cost needs to be divided by 1,000,000.  Therefore:
+   
+   ```sql
+   SELECT unit_price / 1000000 AS unit_price
+   FROM analytics
 
-```sql
-SELECT unit_price / 1000000 AS unit_price
-FROM analytics
-
-SELECT product_price / 1000000 AS product_price
-FROM all_sessions
-```
+   SELECT product_price / 1000000 AS product_price
+   FROM all_sessions
+   ```
 
 2. The 'date' column importing the CSVs is not in the PostgreSQL date format.  The datatype is an 'INT', so it will need to be converted from 'INT' to 'VARCHAR' then 'DATE' as follows:
 
-```sql
-SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
-FROM analytics
+   ```sql
+   SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
+   FROM analytics
 
-SELECT TO_DATE(CAST(date AS VARCHAR(255)), 'YYYYMMDD') AS date
-FROM all_sessions
-```
+   SELECT TO_DATE(CAST(date AS VARCHAR(255)), 'YYYYMMDD') AS date
+   FROM all_sessions
+   ```
 
 3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove excess spaces whether leading, trailing, and in between text, it will be as follows:
 
@@ -38,7 +38,7 @@ FROM all_sessions
    ```sql
    SELECT DISTINCT *
    FROM analytics
-```
+   ```
 
 5. Some countries are not set, so NULL was applied as per following:
 
