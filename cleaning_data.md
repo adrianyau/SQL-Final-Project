@@ -56,7 +56,7 @@ FROM analytics
 	FROM cte_city
    ```
 
-7. It appears that there are incomplete descriptions to the product names.  Therefore, these missing descriptions are amended as follows:
+7. It appears that there are incomplete descriptions for various product names.  It is presumed that a variation ('v2') of the product name were most recently updated.  Therefore, these incomplete descriptions are amended as follows:
 
    ```sql
    SELECT CASE
@@ -67,5 +67,18 @@ FROM analytics
    	JOIN products p
    		ON als.product_sku = p.sku
    ```
+
+8. There are some products that cannot be categorized, so values were NULLED as follows:
+
+   ```sql
+   WITH v2_product_category_cte AS (
+   	SELECT REPLACE(v2_product_category, '${escCatTitle}', '(not set)') AS v2_product_category
+   	FROM all_sessions
+	)
+	SELECT NULLIF(v2_product_category, '(not set)') AS v2_product_category
+	FROM v2_product_category_cte
+   ```
+
+   
 
    
