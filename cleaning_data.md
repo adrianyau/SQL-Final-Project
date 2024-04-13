@@ -26,7 +26,7 @@ SELECT TO_DATE(CAST(date AS VARCHAR(255)), 'YYYYMMDD') AS date
 FROM all_sessions
 ```
 
-3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove the spaces whether leading, trailing, and in between text, it will be as follows:
+3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove excess spaces whether leading, trailing, and in between text, it will be as follows:
 
    ```sql
    SELECT TRIM(from name), as product_description
