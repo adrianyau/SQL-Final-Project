@@ -74,4 +74,13 @@ FROM analytics
    	FROM all_sessions
    ```
 
+9. To nullify a product variant that cannot be set, it is as follows:
+
+    ```sql
+    SELECT NULLIF(product_variant, '(not set)')
+    FROM all_sessions
+    ```
+
+    
+
    
