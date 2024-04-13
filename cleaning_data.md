@@ -52,7 +52,7 @@ Below, provide the SQL queries you used to clean your data.
    ```sql
    WITH cte_city AS (
    	SELECT REPLACE(city, 'not available in demo dataset', '(not set)') AS city
-	FROM all_sessions
+   	FROM all_sessions
    )
    SELECT NULLIF(city, '(not set)') AS city
    FROM cte_city
