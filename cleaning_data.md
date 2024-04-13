@@ -53,9 +53,9 @@ Below, provide the SQL queries you used to clean your data.
    WITH cte_city AS (
    	SELECT REPLACE(city, 'not available in demo dataset', '(not set)') AS city -- NULL if city is not provided
 	FROM all_sessions
-	)
-	SELECT NULLIF(city, '(not set)') AS city
-	FROM cte_city
+   )
+   SELECT NULLIF(city, '(not set)') AS city
+   FROM cte_city
    ```
 
 8. There are some products that cannot be categorized, so values were NULLED as follows:
@@ -64,9 +64,9 @@ Below, provide the SQL queries you used to clean your data.
    WITH v2_product_category_cte AS (
    	SELECT REPLACE(v2_product_category, '${escCatTitle}', '(not set)') AS v2_product_category
    	FROM all_sessions
-	)
-	SELECT NULLIF(v2_product_category, '(not set)') AS v2_product_category
-	FROM v2_product_category_cte
+   )
+   SELECT NULLIF(v2_product_category, '(not set)') AS v2_product_category
+   FROM v2_product_category_cte
    ```
 
 9. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
