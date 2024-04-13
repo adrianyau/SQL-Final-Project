@@ -31,7 +31,7 @@ FROM all_sessions
    FROM sales_report
    ```
    
-4. In the 'analytics' table, there were 4,301,122 rows of data, which led to my assuption that there may be duplicate records.  To remove:
+4. In the 'analytics' table, there were 4,301,122 rows of data, which led to my assumption that there may be duplicate records to attribute to this huge number.  To remove:
 
 ```sql
 SELECT DISTINCT *
