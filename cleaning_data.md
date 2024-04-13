@@ -9,10 +9,10 @@ Below, provide the SQL queries you used to clean your data.
 1. As per cleaning hint, the unit cost needs to be divided by 1,000,000.  Therefore:
 
 ```sql
-SELECT unit_price / 1000000 AS revised_unit_price
+SELECT unit_price / 1000000 AS unit_price
 FROM analytics
 
-SELECT product_price / 1000000 AS revised_product_price
+SELECT product_price / 1000000 AS product_price
 FROM all_sessions
 ```
 
@@ -29,36 +29,36 @@ FROM all_sessions
 3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove the spaces whether leading, trailing, and in between text, it will be as follows:
 
    ```sql
-   SELECT TRIM(from name), name
+   SELECT TRIM(from name), as product_description
    FROM sales_report
    ```
    
 4. In the 'analytics' table, there were 4,301,122 rows of data, which led to my assumption that there may be duplicate records to attribute to this huge number.  To remove:
 
-```sql
-SELECT DISTINCT *
-FROM analytics
+   ```sql
+   SELECT DISTINCT *
+   FROM analytics
 ```
 
 5. Some countries are not set, so NULL was applied as per following:
 
    ```sql
-   SELECT NULLIF(country,'(not set)') AS country -- NULL if countries are not set.
-	FROM all_sessions
+   SELECT NULLIF(country,'(not set)') AS country
+   FROM all_sessions
    ```
    
 6. Some cities do not have values.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NULL was applied as per following:
 
    ```sql
-   WITH cte_city AS (	
-		SELECT REPLACE(city, 'not available in demo dataset', '(not set)') AS city -- NULL if city is not provided
-		FROM all_sessions
+   WITH cte_city AS (
+   	SELECT REPLACE(city, 'not available in demo dataset', '(not set)') AS city -- NULL if city is not provided
+	FROM all_sessions
 	)
 	SELECT NULLIF(city, '(not set)') AS city
 	FROM cte_city
    ```
 
-7. There are some products that cannot be categorized, so values were NULLED as follows:
+8. There are some products that cannot be categorized, so values were NULLED as follows:
 
    ```sql
    WITH v2_product_category_cte AS (
@@ -69,24 +69,24 @@ FROM analytics
 	FROM v2_product_category_cte
    ```
 
-8. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
+9. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
 
    ```sql
-   	SELECT REPLACE(channel_grouping, '(Other)', 'Other')
+   	SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
    	FROM all_sessions
 
-   	SELECT REPLACE(channel_grouping, '(Other)', 'Other')
+   	SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
 	FROM analytics
    ```
 
-9. To nullify a product variant that cannot be set, it is as follows:
+10. To nullify a product variant that cannot be set, it is as follows:
 
     ```sql
-    SELECT NULLIF(product_variant, '(not set)')
+    SELECT NULLIF(product_variant, '(not set)') AS product_variant
     FROM all_sessions
     ```
 
-10. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
+11. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
 
     ```sql
     SELECT TRIM(trailing '/' from page_path_level1) AS page_path_level1
@@ -94,7 +94,7 @@ FROM analytics
     GROUP BY page_path_level1
     ```
 
-11. 
+12. 
 
     
 
