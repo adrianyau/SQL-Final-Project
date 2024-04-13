@@ -72,6 +72,9 @@ FROM analytics
    ```sql
    	SELECT REPLACE(channel_grouping, '(Other)', 'Other')
    	FROM all_sessions
+
+   	SELECT REPLACE(channel_grouping, '(Other)', 'Other')
+	FROM analytics
    ```
 
 9. To nullify a product variant that cannot be set, it is as follows:
@@ -80,6 +83,16 @@ FROM analytics
     SELECT NULLIF(product_variant, '(not set)')
     FROM all_sessions
     ```
+
+10. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
+
+    ```sql
+    SELECT TRIM(trailing '/' from page_path_level1) AS page_path_level1
+    FROM all_sessions
+    GROUP BY page_path_level1
+    ```
+
+11. 
 
     
 
