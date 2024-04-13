@@ -64,8 +64,8 @@ FROM analytics
    	ELSE als.v2_product_name
    	END AS name
    FROM all_sessions als
-	JOIN products p
-		ON als.product_sku = p.sku
+   	JOIN products p
+   		ON als.product_sku = p.sku
    ```
 
    
