@@ -91,7 +91,6 @@ Below, provide the SQL queries you used to clean your data.
     ```sql
     SELECT TRIM(trailing '/' from page_path_level1) AS page_path_level1
     FROM all_sessions
-    GROUP BY page_path_level1
     ```
 
 12. 
