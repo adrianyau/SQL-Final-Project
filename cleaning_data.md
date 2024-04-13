@@ -56,19 +56,7 @@ FROM analytics
 	FROM cte_city
    ```
 
-7. It appears that there are incomplete descriptions for various product names.  It is presumed that a variation ('v2') of the product name were most recently updated.  Therefore, these incomplete descriptions are amended as follows:
-
-   ```sql
-   SELECT CASE
-   	WHEN als.v2_product_name LIKE p.name THEN als.v2_product_name
-	ELSE als.v2_product_name
-	END AS name
-   FROM all_sessions als
-   	JOIN products p
-   		ON als.product_sku = p.sku
-   ```
-
-8. There are some products that cannot be categorized, so values were NULLED as follows:
+7. There are some products that cannot be categorized, so values were NULLED as follows:
 
    ```sql
    WITH v2_product_category_cte AS (
@@ -78,6 +66,8 @@ FROM analytics
 	SELECT NULLIF(v2_product_category, '(not set)') AS v2_product_category
 	FROM v2_product_category_cte
    ```
+
+   
 
    
 
