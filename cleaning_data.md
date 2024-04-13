@@ -45,7 +45,7 @@ FROM analytics
 	FROM all_sessions
    ```
    
-6. Some cities do not have values.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NUll was applied as per following:
+6. Some cities do not have values.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NULL was applied as per following:
 
    ```sql
    WITH cte_city AS (	
