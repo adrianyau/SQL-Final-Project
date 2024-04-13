@@ -45,5 +45,14 @@ FROM analytics
 	FROM all_sessions
    ```
    
+6. Some cities do not have values.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NUll was applied as per following:
 
+   ```sql
+   WITH cte_city AS (	
+		SELECT REPLACE(city, 'not available in demo dataset', '(not set)') AS city -- NULL if city is not provided
+		FROM all_sessions
+	)
+	SELECT NULLIF(city, '(not set)') AS city
+	FROM cte_city
+   ```
    
