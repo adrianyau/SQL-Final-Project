@@ -29,7 +29,8 @@ FROM all_sessions
    ```sql
    SELECT TRIM(from name), name
    FROM sales_report
-  ```
+   ```
+   
 4. In the 'analytics' table, there were 4,301,122 rows of data, which led to my assuption that there may be duplicate records.  To remove:
 
 ```sql
@@ -43,5 +44,6 @@ FROM analytics
    SELECT NULLIF(country,'(not set)') AS country -- NULL if countries are not set.
 	FROM all_sessions
    ```
+   
 
    
