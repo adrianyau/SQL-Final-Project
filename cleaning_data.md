@@ -56,7 +56,7 @@ FROM analytics
 	FROM cte_city
    ```
 
-7. It appears that there are incomplete descriptions to the product names.  Therefore, these missing descriptions are amendedas follows:
+7. It appears that there are incomplete descriptions to the product names.  Therefore, these missing descriptions are amended as follows:
 
    ```sql
    SELECT CASE
