@@ -72,21 +72,21 @@ Below, provide the SQL queries you used to clean your data.
 8. Under 'Channel Grouping', brackets were removed in 'Other' group to align formatting with the rest as follows:
 
    ```sql
-   	SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
-   	FROM all_sessions
+   SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
+   FROM all_sessions
 
-   	SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
-	FROM analytics
+   SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
+   FROM analytics
    ```
 
-9. To nullify a product variant that cannot be set, it is as follows:
+10. To nullify a product variant that cannot be set, it is as follows:
 
     ```sql
     SELECT NULLIF(product_variant, '(not set)') AS product_variant
     FROM all_sessions
     ```
 
-10. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
+11. Under the 'page_path_level1' column, the trailing '/' could be removed as it makes no difference with it:
 
     ```sql
     SELECT TRIM(trailing '/' from page_path_level1) AS page_path_level1
@@ -94,7 +94,7 @@ Below, provide the SQL queries you used to clean your data.
     GROUP BY page_path_level1
     ```
 
-11. 
+12. 
 
     
 
