@@ -96,7 +96,17 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
    ```
 
-11. 
+11. There was a negative number in the units sold.  It may suggest that was negative inventory.  To remove the negative:
+
+    ```sql
+	SELECT CASE
+		WHEN units_sold > 0 THEN units_sold
+		ELSE 0
+		END AS units_sold
+	FROM analytics
+    ```
+
+12. 
 
     
 
