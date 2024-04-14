@@ -58,7 +58,7 @@ Below, provide the SQL queries you used to clean your data.
    FROM cte_city
    ```
 
-7. There are some products that cannot be categorized, so values were NULLED as follows:
+7. There are some products that cannot be categorized, so NULL was applied to these data as follows:
 
    ```sql
    WITH v2_product_category_cte AS (
