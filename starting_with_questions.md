@@ -30,6 +30,7 @@ These are the cities with the highest level of transaction revenues on the site.
 
 Sunnyvale at 849.24, Sydney at 358, Austin at 35.78, and Mountain View at 8.98.
 
+
 These are the countries with the highest level of transaction revenues on the site.
 
 United States at 3,208.95 and Australia at 358.
