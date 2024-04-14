@@ -79,14 +79,14 @@ Below, provide the SQL queries you used to clean your data.
    FROM analytics
    ```
 
-10. To nullify a product variant that cannot be set, it is as follows:
+9. To nullify a product variant that cannot be set, it is as follows:
 
     ```sql
     SELECT NULLIF(product_variant, '(not set)') AS product_variant
     FROM all_sessions
     ```
 
-11. In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
+10. In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
 
     ```sql
     SELECT CASE
@@ -96,7 +96,7 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
    ```
 
-12. 
+11. 
 
     
 
