@@ -7,10 +7,18 @@ Answer the following questions and provide the SQL queries used to find the answ
 SQL Queries:
 
 ```sql
+/* Group cities by sum of transaction revenues ordered by descending */
 SELECT city, SUM(total_transaction_revenue::REAL / 1000000) AS total_transaction_revenue
 FROM all_sessions
 WHERE city != '(not set)' AND city!= 'not available in demo dataset' AND total_transaction_revenue IS NOT NULL
 GROUP BY city
+ORDER BY total_transaction_revenue DESC
+
+/* Group countries by sum of transaction revenues ordered by descending */
+SELECT country, SUM(total_transaction_revenue::REAL / 1000) AS total_transaction_revenue
+FROM all_sessions
+WHERE country != '(not set)' AND total_transaction_revenue IS NOT NULL
+GROUP BY country
 ORDER BY total_transaction_revenue DESC
 ```
 
@@ -49,6 +57,9 @@ Israel"	        602,000
 Australia	    358,000
 Canada        	150,150
 Switzerland    	16,990
+
+
+
 
 
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
