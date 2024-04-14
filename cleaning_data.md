@@ -96,7 +96,7 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
     ```
 
-11. There was a negative number in the units sold.  It may suggest that was negative inventory.  To remove the negative:
+11. There was a negative number in the units sold.  It may suggest that there was negative inventory for this product.  To remove the negative:
 
     ```sql
 	SELECT CASE
