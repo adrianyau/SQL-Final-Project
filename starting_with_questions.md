@@ -28,7 +28,7 @@ Answer:
 
 These are the cities with the highest level of transaction revenues on the site.
 
-City	        Transaction Revenues
+City            Transaction Revenues
 San Francisco	1564.32
 Sunnyvale	    992.23
 Atlanta	        854.44
