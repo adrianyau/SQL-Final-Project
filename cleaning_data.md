@@ -9,10 +9,10 @@ Below, provide the SQL queries you used to clean your data.
 1. As per cleaning hint in the 'cleaning_data.md' file, the unit cost needs to be divided by 1,000,000.  Therefore:
    
    ```sql
-   SELECT unit_price / 1000000 AS unit_price
+   SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
    FROM analytics
 
-   SELECT product_price / 1000000 AS product_price
+   SELECT CAST(product_price AS REAL) / 1000000 AS product_price
    FROM all_sessions
    ```
 
