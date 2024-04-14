@@ -53,7 +53,7 @@ These are the countries with the highest level of transaction revenues on the si
 
 Country        	Transaction Revenues
 United States	13,154,170
-Israel"	        602,000
+Israel	        602,000
 Australia	    358,000
 Canada        	150,150
 Switzerland    	16,990
