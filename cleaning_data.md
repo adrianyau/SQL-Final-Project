@@ -88,13 +88,13 @@ Below, provide the SQL queries you used to clean your data.
 
 10. In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
 
-  ```sql
+    ```sql
     SELECT CASE
        WHEN page_path_level1 LIKE '%/' THEN page_path_level1
        ELSE CONCAT(page_path_level1,'/')
        END AS page_path_level1
 	FROM all_sessions
-   ```
+    ```
 
 11. There was a negative number in the units sold.  It may suggest that was negative inventory.  To remove the negative:
 
