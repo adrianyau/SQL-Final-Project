@@ -22,7 +22,7 @@ Below, provide the SQL queries you used to clean your data.
    SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
    FROM analytics
 
-   SELECT TO_DATE(CAST(date AS VARCHAR(255)), 'YYYYMMDD') AS date
+   SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
    FROM all_sessions
    ```
 
