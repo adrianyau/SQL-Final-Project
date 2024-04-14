@@ -40,14 +40,14 @@ Below, provide the SQL queries you used to clean your data.
    FROM analytics
    ```
 
-5. Some countries are not set, so NULL was applied as per following:
+5. Some countries are not set in the column, so NULL was applied as per following:
 
    ```sql
    SELECT NULLIF(country,'(not set)') AS country
    FROM all_sessions
    ```
    
-6. Some cities do not have values.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NULL was applied as per following:
+6. Some cities are not available or set in the column.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NULL was applied as per following:
 
    ```sql
    WITH cte_city AS (
@@ -79,7 +79,7 @@ Below, provide the SQL queries you used to clean your data.
    FROM analytics
    ```
 
-9. To nullify a product variant that cannot be set, it is as follows:
+9. Some product variants cannot be set, so they are set as NULL as follows:
 
     ```sql
     SELECT NULLIF(product_variant, '(not set)') AS product_variant
@@ -96,7 +96,7 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
     ```
 
-11. There was a negative number in the units sold.  It may suggest that there was negative inventory for this product.  To remove the negative:
+11. There was a negative number in the units sold.  It may suggest that the unit was sold despite zero inventory for this product.  To remove the negative:
 
     ```sql
 	SELECT CASE
