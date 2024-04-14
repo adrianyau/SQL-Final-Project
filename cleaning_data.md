@@ -96,9 +96,6 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
    ```
 
-
-    ```
-
 12. 
 
     
