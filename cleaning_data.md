@@ -88,7 +88,7 @@ Below, provide the SQL queries you used to clean your data.
 
 10. In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
 
-    ```sql
+  ```sql
     SELECT CASE
        WHEN page_path_level1 LIKE '%/' THEN page_path_level1
        ELSE CONCAT(page_path_level1,'/')
