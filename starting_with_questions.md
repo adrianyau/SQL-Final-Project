@@ -131,7 +131,7 @@ ORDER BY sum_revenue DESC, calc_revenue DESC
 
 Answer:
 
-No, because there are two different revenues provided from the database.  One has the revenues, and the other has the number of units sold and unit price, which can also calculate the revenue, but it does not match the revenue listed on the table.
+No, because there are two different revenues provided from the database.  One set of data has the revenues, and the other set of data can be used multiplying the number of units sold and unit price, but it does not match the revenue originally on the table.
 
 
 
