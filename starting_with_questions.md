@@ -124,7 +124,7 @@ JOIN analytics a
 	ON als.full_visitor_id = a.full_visitor_id
 WHERE country != '(not set)' AND units_sold IS NOT NULL AND revenue IS NOT NULL
 GROUP BY als.country
-ORDER BY sum_revenue DESC
+ORDER BY sum_revenue DESC, calc_revenue DESC
 ```
 
 
