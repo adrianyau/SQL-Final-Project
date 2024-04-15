@@ -38,6 +38,36 @@ These are the countries with the highest level of transaction revenues on the si
 
 SQL Queries:
 
+DRAFT:
+
+```sql
+WITH visitor_and_units_sold AS(
+	SELECT DISTINCT full_visitor_id, units_sold
+	FROM analytics
+	WHERE units_sold IS NOT NULL
+)
+SELECT als.city, CAST(AVG(units_sold) AS INTEGER)
+FROM all_sessions als
+JOIN visitor_and_units_sold vus
+	ON als.full_visitor_id = vus.full_visitor_id
+WHERE als.city != '(not set)' AND city != 'not available in demo dataset'
+GROUP BY als.city
+ORDER BY als.city
+
+
+WITH visitor_and_units_sold AS(
+	SELECT DISTINCT full_visitor_id, units_sold
+	FROM analytics
+	WHERE units_sold IS NOT NULL
+)
+SELECT als.country, CAST(AVG(units_sold) AS INTEGER)
+FROM all_sessions als
+JOIN visitor_and_units_sold vus
+	ON als.full_visitor_id = vus.full_visitor_id
+WHERE als.country != '(not set)'
+GROUP BY als.country
+ORDER BY als.country
+```
 
 
 Answer:
