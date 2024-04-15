@@ -30,11 +30,11 @@ WHERE city = '(not set)' OR city = 'not available in demo dataset' OR country = 
  ```sql
 SELECT *
 FROM analytics
-/* Total rows: 4,301,122
+/* Total rows: 4,301,122 */
 
  SELECT DISTINCT *
 FROM analytics
-/* Total rows: 1,739,308
+/* Total rows: 1,739,308 */
 ```
 
 4. 
