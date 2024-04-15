@@ -106,11 +106,32 @@ Answer:
 
 SQL Queries:
 
+DRAFT:
+
+```sql
+SELECT als.city, SUM(a.revenue) as sum_revenue, SUM(a.units_sold * a.unit_price) as calc_revenue
+FROM all_sessions als
+JOIN analytics a
+	ON als.full_visitor_id = a.full_visitor_id
+WHERE city != '(not set)' AND city != 'not available in demo dataset' AND units_sold IS NOT NULL AND revenue IS NOT NULL
+GROUP BY als.city
+ORDER BY sum_revenue DESC, calc_revenue DESC
+
+
+SELECT als.country, SUM(a.revenue) as sum_revenue, SUM(a.units_sold * a.unit_price) as calc_revenue
+FROM all_sessions als
+JOIN analytics a
+	ON als.full_visitor_id = a.full_visitor_id
+WHERE country != '(not set)' AND units_sold IS NOT NULL AND revenue IS NOT NULL
+GROUP BY als.country
+ORDER BY sum_revenue DESC
+```
+
 
 
 Answer:
 
-
+No, because there are two different revenues provided from the database.  One has the revenues, and the other has the number of units sold and unit price, which can also calculate the revenue, but it does not match the revenue listed on the table.
 
 
 
