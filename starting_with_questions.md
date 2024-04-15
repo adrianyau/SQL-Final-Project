@@ -137,6 +137,50 @@ City		Average Number of Products
 "Zhongli District"	1
 "Zurich"	1
 
+Country		Average Number of Products
+"Australia"	1
+"Austria"	1
+"Belarus"	1
+"Belgium"	1
+"Bulgaria"	2
+"Canada"	3
+"Chile"	1
+"Colombia"	1
+"Czechia"	25
+"Denmark"	1
+"Dominican Republic"	1
+"Egypt"	1
+"Finland"	1
+"France"	1
+"Germany"	1
+"Guatemala"	1
+"Hong Kong"	2
+"India"	1
+"Indonesia"	1
+"Ireland"	1
+"Israel"	1
+"Japan"	2
+"Maldives"	1
+"Mexico"	2
+"Netherlands"	1
+"Norway"	1
+"Panama"	1
+"Portugal"	1
+"Romania"	1
+"Russia"	1
+"Singapore"	1
+"South Korea"	1
+"Spain"	1
+"Sri Lanka"	1
+"Sweden"	1
+"Switzerland"	1
+"Taiwan"	1
+"Thailand"	1
+"United Kingdom"	1
+"United States"	27
+"Uruguay"	1
+"Vietnam"	1
+
 
 
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
