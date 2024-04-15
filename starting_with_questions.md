@@ -72,7 +72,70 @@ ORDER BY als.country
 
 Answer:
 
-
+City		Average Number of Products
+"Ahmedabad"	1
+"Ann Arbor"	1
+"Atlanta"	5
+"Austin"	5
+"Bangkok"	1
+"Berlin"	1
+"Bogota"	1
+"Cambridge"	2
+"Charlotte"	10
+"Chicago"	9
+"Courbevoie"	1
+"Cupertino"	1
+"Dallas"	1
+"Denver"	2
+"Detroit"	1
+"Dublin"	1
+"Fremont"	1
+"Hamburg"	2
+"Helsinki"	1
+"Hong Kong"	2
+"Houston"	3
+"Hyderabad"	2
+"Irvine"	1
+"Jakarta"	1
+"Jersey City"	8
+"Kirkland"	2
+"Kitchener"	1
+"London"	1
+"Los Angeles"	5
+"Madrid"	1
+"Milpitas"	4
+"Minato"	1
+"Montevideo"	1
+"Mountain View"	13
+"Munich"	1
+"Nashville"	6
+"New York"	11
+"Osaka"	1
+"Palo Alto"	1
+"Paris"	3
+"Phoenix"	1
+"Pittsburgh"	4
+"Salem"	11
+"San Bruno"	71
+"San Diego"	1
+"San Francisco"	1
+"San Jose"	12
+"Santa Clara"	1
+"Santa Monica"	2
+"Santiago"	1
+"Seattle"	15
+"Seoul"	1
+"Singapore"	1
+"South San Francisco"	1
+"Stockholm"	1
+"Sunnyvale"	14
+"Sydney"	1
+"Tel Aviv-Yafo"	1
+"Toronto"	2
+"Washington"	1
+"Yokohama"	1
+"Zhongli District"	1
+"Zurich"	1
 
 
 
