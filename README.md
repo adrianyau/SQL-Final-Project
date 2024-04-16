@@ -1,7 +1,7 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(fill in your description and goals here)
+The project is to showcase our SQL fundamentals and knowledge of SQL queries to apply to this mock dataset from an e-commerce company.  The goal is to improve its raw data by cleaning, transforming, and analyzing, as well as identifying risk areas for quality assurance.  
 
 ## Process
 ### (your step 1)
