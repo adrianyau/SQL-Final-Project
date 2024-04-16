@@ -82,12 +82,71 @@ Answer:
 
 These are the following cities with the average number of products as follows:
 
-
+Ann Arbor: 1, 
+Atlanta: 1, 
+Austin: 1, 
+Bangkok: 1, 
+Berlin:	1, 
+Bogota:	1, 
+Chicago: 6, 
+Dallas, 1 
+Detroit: 1, 
+Dublin"	1
+Hong Kong: 1,  
+Houston: 3, 
+Hyderabad: 2, 
+Kirkland: 1, 
+London: 1, 
+Mountain View: 3, 
+Munich:	1, 
+New York: 2, 
+Palo Alto: 1, 
+Paris: 1, 
+Pittsburgh: 4, 
+San Bruno: 1, 
+San Francisco: 2, 
+San Jose: 1, 
+Santiago: 1, 
+Seattle: 1, 
+Singapore: 1, 
+Sunnyvale: 2, 
+Tel Aviv-Yafo: 1, 
+Toronto: 3, 
+Washington: 1, and
+Zurich: 1.
 
 These are the following countires with the average number of products as follows:
 
-
-
+Australia: 1, 
+Austria: 1, 
+Belgium: 1, 
+Bulgaria: 2, 
+Canada: 3, 
+Chile: 1, 
+Colombia: 1, 
+Denmark: 1, 
+Egypt: 1, 
+France: 1, 
+Germany: 1, 
+Hong Kong: 1, 
+India: 1, 
+Indonesia: 1, 
+Ireland: 1, 
+Israel: 1, 
+Japan: 2, 
+Maldives: 1, 
+Mexico: 2, 
+Netherlands: 1, 
+Romania: 1, 
+Singapore: 1, 
+South Korea: 1, 
+Sweden:	1, 
+Switzerland: 1, 
+Taiwan: 1, 
+Thailand: 1, 
+United Kingdom: 1, 
+United States: 2, and
+Vietnam: 1.
 
 
 
@@ -151,6 +210,8 @@ WHERE rank = 1
 Answer:
 
 I find that it is difficult to find a pattern in the product categories because there is still missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results for the product categories in their respective cities and countries.
+
+
 
 **Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
 
