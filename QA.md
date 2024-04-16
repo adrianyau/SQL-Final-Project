@@ -20,9 +20,13 @@ WHERE p.sku IS NULL AND sr.product_sku IS NULL AND sr.product_sku IS NULL
 2. Some information on cities and countries or not set or available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.
 
 ``` sql
-SELECT city, country
+SELECT city
 FROM all_sessions
-WHERE city = '(not set)' OR city = 'not available in demo dataset' OR country = '(not set)'
+WHERE city = '(not set)' AND city = 'not available in demo dataset'
+
+SELECT country
+FROM all_sessions
+WHERE country = '(not set)'
 ```
 
 3. In the 'analytics' table where it tracks website information data, duplications can occur because user can double-click on a page link, re-click on a page link if the website does not respond, or even clicking back and forth between page links.  To remove such duplications, DISTINCT() function was used:
@@ -37,4 +41,10 @@ FROM analytics
 /* Total rows: 1,739,308 */
 ```
 
-4. 
+4. There are some products that cannot be categorized, so NULL was applied to these data as follows:
+
+   ```sql
+   SELECT v2_product_category
+   FROM all_sessions
+   WHERE v2_product_category != '${escCatTitle}' AND v2_product_category != '(not set)'
+   ```
