@@ -150,15 +150,15 @@ WHERE rank = 1
 
 Answer:
 
-
+I find that it is difficult to find a pattern in the product categories because there is still missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results for the product categories in their respective cities and countries.
 
 **Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
 
 
 SQL Queries:
 
-/* The top selling product from each city was determined by joining the product name and city based on the number of orders.  The product with the most number of order was ranked and filtered out by cities. */
 ```sql
+/* The top selling product from each city was determined by joining the product name and city based on the number of orders.  The product with the most number of order was ranked and filtered out by cities. */
 WITH top_selling_products_by_city AS (
 
 WITH number_of_orders AS (
@@ -179,8 +179,8 @@ WHERE city != '(not set)' AND city != 'not available in demo dataset' AND als.v2
 GROUP BY als.city, als.v2_product_name, noo.top_sellers
 ORDER BY als.city
 )
-SELECT *
-FROM top_selling_products_by_city
+SELECT ts.city, ts.v2_product_name
+FROM top_selling_products_by_city ts
 WHERE rank = 1
 
 
@@ -205,8 +205,8 @@ WHERE als.country != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.country, als.v2_product_name, noo.top_sellers
 ORDER BY als.country
 )
-SELECT *
-FROM top_selling_products_by_country
+SELECT ts.country, ts.v2_product_name
+FROM top_selling_products_by_country ts
 WHERE rank = 1
 ```
 
@@ -214,7 +214,7 @@ WHERE rank = 1
 
 Answer:
 
-I find that it is difficult to find a pattern in the products sold because there is missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results for the top product in their respective cities and countries.
+I find that it is difficult to find a pattern in the products sold because there is missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results on what would be the top product in their respective cities and countries.
 
 
 
