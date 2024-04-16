@@ -13,7 +13,7 @@ Answer:
 
 There are 104 items under Men's Performance Wear and there are 48 items under Women's Performance Wear.
 
-Question 2: Of the types of 'Accessories', rank the 'Top-10' most expensive items.
+Question 2: Of all 'Accessories', rank the 'Top-10' most expensive items in USD.
 
 SQL Queries:
 
