@@ -6,11 +6,13 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 ## Process
 1. Five (5) CSV files were downloaded and imported into pgAdmin4.  For sake of simplicity with datatypes and time to upload the CSV files, 'VARCHAR' and 'INTEGER', whether 'INT' or 'BIG INT' depending on the length of numbers, were applied.  Names labeled in the 'Tables' and 'Columns' were case-sensitive and space-sensitive, so the names were typed in lower capitals and words were separate replacing undescores '_' over spaces.
 
-2.   
+2. The primary key could be identified as the products' SKU between the 'products', 'sales_report', and 'sales_from_sku' tables as they are unique and NOT NULL.  For the 'all_sessions' and 'analytics' tables, it appears that the primary key could be the 'visit_id' column.  Initially, I thought that the 'full_visitor_id' column could be a primary key, but I discovered that every page visit would generate its own unique 'visit_id'.  When I tried to assign the primary key for the 'visit_id', there was an error due to key being duplicated and it could not create a unique index.  In addition, the 'product_sku' column could be found in the 'all_sessions' table, but the foreign key could not be assigned due to duplication.  The 'DISTINCT()' function would have removed any duplicates, but it was suggested not to alter the dataset in the tables to preserve the original raw data for the purpose of this project.
+
+3. As for data cleaning and manipulation, minor corrections could be applied, such as conversion of numeric values to 'date' and 'time' formats in their respective columns, addition [CONCAT()] or deletion [TRIM()] of special characters, or the removal of extra spaces from the names in products descriptions.  Most notably, I feel that the missing information not set for cities and countries could play a factor in the results once I got into the section to answer the five (5) data questions.
 
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+- Duplication is evident in the database with the webpage information.  
 
 ## Challenges 
 - Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
