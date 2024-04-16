@@ -253,7 +253,7 @@ WHERE rank = 1
 
 Answer:
 
-I do not think that there is a pattern on product categories from visitors in each city and country.  For example, the largest product category sold in the city of Mountain View, United States is stickers for 5,776 units.  However, the largest product category sold in the country of the United States is dog frisbee for 11,328 units.  We do not know which cities sold dog frisbess in the United States.  Hypotheically, if it were discouvered that the majority of these products were purchased in the city of Mountain View, United States, then the largest product category sold should be dog frisbees.
+I do not think that there is a pattern on product categories from visitors in each city and country.  For example, the largest product category sold in the city of Mountain View, United States is stickers for 5,776 units.  However, the largest product category sold in the country of the United States is dog frisbee for 11,328 units.  We do not know which cities sold dog frisbess in the United States.  Hypotheically, if the majority of dog frisbees were purchased in the city of Mountain View, United States, then the largest product category sold should be dog frisbees in Mountain View, United States.
 
 
 
