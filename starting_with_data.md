@@ -17,7 +17,7 @@ women_performance_apparel AS (
 	WHERE v2_product_category LIKE '%Women%' AND v2_product_category LIKE '%Performance Wear%'
 	GROUP BY v2_product_category, v2_product_name
 )
-SELECT v2_product_category AS product_category_by_gender, COUNT(v2_product_category) AS num_of_performance_items
+SELECT v2_product_category AS product_category_by_gender, COUNT(v2_product_category) AS num_of_performance_wear_items
 FROM men_performance_apparel
 GROUP BY v2_product_category
 UNION
