@@ -112,6 +112,7 @@ JOIN num_of_orders noo
 WHERE city != '(not set)' AND city != 'not available in demo dataset' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.city, als.v2_product_category, noo.num_of_visitors
 )
+
 SELECT *
 FROM top_product_categories_by_city
 WHERE rank = 1
@@ -136,6 +137,7 @@ JOIN num_of_orders noo
 WHERE city != '(not set)' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.country, als.v2_product_category, noo.num_of_visitors
 )
+
 SELECT *
 FROM top_categories_by_country
 WHERE rank = 1
