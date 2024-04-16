@@ -1,10 +1,10 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-The project is to showcase our SQL fundamentals and knowledge of SQL queries to apply to this mock dataset from an e-commerce company.  The goal is to improve its raw data by cleaning, transforming, and analyzing, as well as identifying risk areas for quality assurance.  
+The project is to showcase our SQL fundamentals and knowledge of SQL queries to apply to this mock dataset from a fictitious e-commerce company.  The goal is to improve its original raw data, despite information being inaccurate, inconsistent, duplicated, and missing, by cleaning, transforming, and analyzing, as well as identifying risk areas for our methods of quality assurance, and get meaningful results.  
 
 ## Process
-### (your step 1)
+1. 
 ### (your step 2)
 
 ## Results
@@ -14,4 +14,6 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 (discuss challenges you faced in the project)
 
 ## Future Goals
-(what would you do if you had more time?)
+- Better use of time and efficiencies to gather, sort, and obtain the results in a short stint of like.
+- Learn intermidate and advanced SQL functions to apply different combinations of code to achieve various desired outcomes.
+- Not only do I like expand and sharpen my understanding of the SQL language, but I would like to gain insight of the data from a business perspective.  For the SQL Final Project in particular, I would have liked to know how an e-commerce operates and understand what sort of information is important and relevant to their stakeholders.
