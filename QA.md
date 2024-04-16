@@ -22,11 +22,11 @@ WHERE p.sku IS NULL AND sr.product_sku IS NULL AND sr.product_sku IS NULL
 ``` sql
 SELECT city
 FROM all_sessions
-WHERE city = '(not set)' AND city = 'not available in demo dataset'
+WHERE city != '(not set)' AND city != 'not available in demo dataset'
 
 SELECT country
 FROM all_sessions
-WHERE country = '(not set)'
+WHERE country != '(not set)'
 ```
 
 3. In the 'analytics' table where it tracks website information data, duplications can occur because user can double-click on a page link, re-click on a page link if the website does not respond, or even clicking back and forth between page links.  To remove such duplications, DISTINCT() function was used:
