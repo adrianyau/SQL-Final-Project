@@ -7,14 +7,14 @@ Answer the following questions and provide the SQL queries used to find the answ
 SQL Queries:
 
 ```sql
-/* Group cities by sum of transaction revenues where purchase was completed ordered by descending */
+/* The total transaction revenues were filtered, summed up, and grouped according to the city. */
 SELECT city, SUM(total_transaction_revenue::REAL / 1000000) AS total_transaction_revenue
 FROM all_sessions
 WHERE city != '(not set)' AND city!= 'not available in demo dataset' AND total_transaction_revenue IS NOT NULL AND transaction_id IS NOT NULL
 GROUP BY city
 ORDER BY total_transaction_revenue DESC
 
-/* Group countries by sum of transaction revenues where purchase was completed ordered by descending */
+/* The total transaction revenues were filtered, summed up, and grouped according to the country. */
 SELECT country, SUM(total_transaction_revenue::REAL / 1000000) AS total_transaction_revenue
 FROM all_sessions
 WHERE country != '(not set)' AND total_transaction_revenue IS NOT NULL AND transaction_id IS NOT NULL
