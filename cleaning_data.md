@@ -37,61 +37,8 @@ Below, provide the SQL queries you used to clean your data.
    SELECT TRIM(from name), AS product_description
    FROM sales_report
    ```
-   
-4. In the 'analytics' table, there were 4,301,122 rows of data, which led to my assumption that there may be duplicate records to attribute to this huge number.  To remove:
 
-   ```sql
-   SELECT DISTINCT *
-   FROM analytics
-   ```
-
-5. Some countries are not set in the column, so NULL was applied as per following:
-
-   ```sql
-   SELECT NULLIF(country,'(not set)') AS country
-   FROM all_sessions
-   ```
-   
-6. Some cities are not available or set in the column.  There are two variables ('(not set)' and 'not available in demo dataset') that do not provide us the information. NULL was applied as per following:
-
-   ```sql
-   WITH cte_city AS (
-   	SELECT REPLACE(city, 'not available in demo dataset', '(not set)') AS city
-   	FROM all_sessions
-   )
-   SELECT NULLIF(city, '(not set)') AS city
-   FROM cte_city
-   ```
-
-7. There are some products that cannot be categorized, so NULL was applied to these data as follows:
-
-   ```sql
-   WITH v2_product_category_cte AS (
-   	SELECT REPLACE(v2_product_category, '${escCatTitle}', '(not set)') AS v2_product_category
-   	FROM all_sessions
-   )
-   SELECT NULLIF(v2_product_category, '(not set)') AS v2_product_category
-   FROM v2_product_category_cte
-   ```
-
-8. Under 'Channel Grouping', brackets were removed in between the 'Other' group to align formatting with the rest as follows:
-
-   ```sql
-   SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
-   FROM all_sessions
-
-   SELECT REPLACE(channel_grouping, '(Other)', 'Other') AS channel_grouping
-   FROM analytics
-   ```
-
-9. Some product variants cannot be set, so they are set as NULL as follows:
-
-    ```sql
-    SELECT NULLIF(product_variant, '(not set)') AS product_variant
-    FROM all_sessions
-    ```
-
-10. In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
+4.  In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
 
     ```sql
     SELECT CASE
@@ -101,7 +48,7 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
     ```
 
-11. The times are shown in numerical format, so the data was convered to Hour:Minute:Second format as follows:
+5.  The times are shown in numerical format, so the data was convered to Hour:Minute:Second format as follows:
 
     ```sql
     SELECT CAST(TO_TIMESTAMP(time) AS time)
