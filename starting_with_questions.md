@@ -198,9 +198,8 @@ Vietnam with 1.
 
 SQL Queries:
 
-DRAFT:
-
 ```sql
+/* The product categories were ranked and partitioned by each city to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each city */
 WITH top_product_categories_by_city AS (
 
 WITH city_sum_of_orders AS (
@@ -225,7 +224,7 @@ SELECT *
 FROM top_product_categories_by_city
 WHERE rank = 1
 
-
+/* The product categories were ranked and partitioned by each country to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each country */
 WITH top_product_categories_by_country AS (
 
 WITH country_sum_of_orders AS (
