@@ -117,7 +117,7 @@ FROM top_product_categories_by_city
 WHERE rank = 1
 
 
-WITH top_categories_by_countries AS (
+WITH top_categories_by_country AS (
 
 WITH num_of_orders AS (
 	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS num_of_visitors
@@ -137,7 +137,7 @@ WHERE city != '(not set)' AND als.v2_product_category != '(not set)' AND als.v2_
 GROUP BY als.country, als.v2_product_category, noo.num_of_visitors
 )
 SELECT *
-FROM top_categories_by_countries
+FROM top_categories_by_country
 WHERE rank = 1
 ```
 
