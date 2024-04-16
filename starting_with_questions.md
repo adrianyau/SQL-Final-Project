@@ -87,45 +87,46 @@ Answer:
 
 These are the following cities with the average number of products as follows:
 
-|city          |avg|
-|--------------|---|
-|Ann Arbor     |1  |
-|Atlanta       |1  |
-|Austin        |1  |
-|Bangkok       |1  |
-|Berlin        |1  |
-|Bogota        |1  |
-|Chicago       |6  |
-|Dallas        |1  |
-|Detroit       |1  |
-|Dublin        |1  |
-|Hong Kong     |1  |
-|Houston       |3  |
-|Hyderabad     |2  |
-|Kirkland      |1  |
-|London        |1  |
-|Mountain View |3  |
-|Munich        |1  |
-|New York      |2  |
-|Palo Alto     |1  |
-|Paris         |1  |
-|Pittsburgh    |4  |
-|San Bruno     |1  |
-|San Francisco |2  |
-|San Jose      |1  |
-|Santiago      |1  |
-|Seattle       |1  |
-|Singapore     |1  |
-|Sunnyvale     |2  |
-|Tel Aviv-Yafo |1  |
-|Toronto       |3  |
-|Washington    |1  |
-|Zurich        |1  |
+|city          |avg_num_of_products|
+|--------------|-------------------|
+|Ann Arbor     |1                  |
+|Atlanta       |1                  |
+|Austin        |1                  |
+|Bangkok       |1                  |
+|Berlin        |1                  |
+|Bogota        |1                  |
+|Chicago       |6                  |
+|Dallas        |1                  |
+|Detroit       |1                  |
+|Dublin        |1                  |
+|Hong Kong     |1                  |
+|Houston       |3                  |
+|Hyderabad     |2                  |
+|Kirkland      |1                  |
+|London        |1                  |
+|Mountain View |3                  |
+|Munich        |1                  |
+|New York      |2                  |
+|Palo Alto     |1                  |
+|Paris         |1                  |
+|Pittsburgh    |4                  |
+|San Bruno     |1                  |
+|San Francisco |2                  |
+|San Jose      |1                  |
+|Santiago      |1                  |
+|Seattle       |1                  |
+|Singapore     |1                  |
+|Sunnyvale     |2                  |
+|Tel Aviv-Yafo |1                  |
+|Toronto       |3                  |
+|Washington    |1                  |
+|Zurich        |1                  |
+
 
 
 These are the following countires with the average number of products as follows:
 
-|country       |avg|
+|country       |avg_num_of_products|
 |--------------|---|
 |Australia     |1  |
 |Austria       |1  |
