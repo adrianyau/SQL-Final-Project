@@ -56,7 +56,27 @@ Android 24 oz Contigo Bottle at 23 USD.
 
 Question 3: 
 
+For context, the sentiment score is a number that tells how words elicit emotional responses and opinions whether 'positive', 'negative', and 'neutral'.  For Question 3, find 'Water Bottles' that have a sentiment score above 0.5.  For this exercise specifically, a sentiment score of 0.5 or above is a sign of 'positive' feedback on a scale between -1.0 and 1.0.
+
 SQL Queries:
+
+```sql
+SELECT TRIM(FROM name) AS name, sku, sentiment_score
+FROM products
+WHERE name LIKE '%Water Bottle%' AND sentiment_score IS NOT NULL AND sentiment_magnitude IS NOT NULL
+GROUP BY name, sku, sentiment_score
+HAVING sentiment_score > 0.5
+ORDER BY sentiment_score DESC
+```
 
 Answer:
 
+22 oz Water Bottle, 
+SKU: GGOEGDHC018299, 
+Sentiment Score: 0.9
+
+"22 oz Water Bottle, 
+SKU: GGOEGAAX0074, 
+Sentiment Score: 0.7
+
+There are 2 Water Bottles that have a sentiment score above 0.5.
