@@ -71,11 +71,11 @@ ORDER BY sentiment_score DESC
 
 Answer:
 
-22 oz Water Bottle, 
+#1. 22 oz Water Bottle, 
 SKU: GGOEGDHC018299, 
 Sentiment Score: 0.9
 
-"22 oz Water Bottle, 
+#2. 22 oz Water Bottle, 
 SKU: GGOEGAAX0074, 
 Sentiment Score: 0.7
 
