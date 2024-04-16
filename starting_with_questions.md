@@ -38,8 +38,6 @@ These are the countries with the highest level of transaction revenues on the si
 
 SQL Queries:
 
-DRAFT:
-
 ```sql
 /* The units sold is presumed to have the amount of products sold in one order linked to the full visitor id, which in turn, is joined with the city information to calculate the average for each city. */
 
