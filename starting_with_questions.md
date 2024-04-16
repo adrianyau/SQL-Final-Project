@@ -41,6 +41,8 @@ SQL Queries:
 DRAFT:
 
 ```sql
+/* The units sold is presumed to have the amount of products sold in one order linked to the full visitor id, which in turn, is joined with the city information to calculate the average for each city. */
+
 WITH visitor_and_units_sold AS(
 	SELECT DISTINCT full_visitor_id, units_sold
 	FROM analytics
@@ -54,6 +56,7 @@ WHERE als.city != '(not set)' AND city != 'not available in demo dataset'
 GROUP BY als.city
 ORDER BY als.city
 
+/* The units sold is presumed to have the amount of products sold in one order linked to the full visitor id, which in turn, is joined with the country information to calculate the average for each country. */
 
 WITH visitor_and_units_sold AS(
 	SELECT DISTINCT full_visitor_id, units_sold
@@ -72,72 +75,12 @@ ORDER BY als.country
 
 Answer:
 
-City		Average Number of Products
-"Ahmedabad"	1
-"Ann Arbor"	1
-"Atlanta"	5
-"Austin"	5
-"Bangkok"	1
-"Berlin"	1
-"Bogota"	1
-"Cambridge"	2
-"Charlotte"	10
-"Chicago"	9
-"Courbevoie"	1
-"Cupertino"	1
-"Dallas"	1
-"Denver"	2
-"Detroit"	1
-"Dublin"	1
-"Fremont"	1
-"Hamburg"	2
-"Helsinki"	1
-"Hong Kong"	2
-"Houston"	3
-"Hyderabad"	2
-"Irvine"	1
-"Jakarta"	1
-"Jersey City"	8
-"Kirkland"	2
-"Kitchener"	1
-"London"	1
-"Los Angeles"	5
-"Madrid"	1
-"Milpitas"	4
-"Minato"	1
-"Montevideo"	1
-"Mountain View"	13
-"Munich"	1
-"Nashville"	6
-"New York"	11
-"Osaka"	1
-"Palo Alto"	1
-"Paris"	3
-"Phoenix"	1
-"Pittsburgh"	4
-"Salem"	11
-"San Bruno"	71
-"San Diego"	1
-"San Francisco"	1
-"San Jose"	12
-"Santa Clara"	1
-"Santa Monica"	2
-"Santiago"	1
-"Seattle"	15
-"Seoul"	1
-"Singapore"	1
-"South San Francisco"	1
-"Stockholm"	1
-"Sunnyvale"	14
-"Sydney"	1
-"Tel Aviv-Yafo"	1
-"Toronto"	2
-"Washington"	1
-"Yokohama"	1
-"Zhongli District"	1
-"Zurich"	1
+These are the following cities with the average number of products as follows:
 
-Country		Average Number of Products
+Ahmedabad with 1, Ann Arbor with 1, Atlanta with 5, Austin with	5, Bangkok with	1, Berlin with 1, Bogota with 1, Cambridge with 2, Charlotte with 10, Chicago with 9, Courbevoie with 1, Cupertino with 1, Dallas with 1, Denver with 2, Detroit with 1, Dublin with 1, Fremont with 1, Hamburg with 2, Helsinki with 1, Hong Kong with	2, Houston with	3, Hyderabad with 2, Irvine with 1, Jakarta with 1, Jersey City with 8, Kirkland with 2, Kitchener with 1, London with 1, Los Angeles with 5, Madrid with 1, Milpitas with 4, Minato with 1, Montevideo with 1, Mountain View with 13, Munich with 1, Nashville with 6, New York with 11, Osaka with 1, Palo Alto with 1, Paris with 3, Phoenix with 1, Pittsburgh with 4, Salem with 11, San Bruno with 71, San Diego with 1, San Francisco with 1, San Jose with 12, Santa Clara with 1, Santa Monica with 2, Santiago with 1, Seattle with 15, Seoul with 1, Singapore with 1, South San Francisco with 1, Stockholm with 1, Sunnyvale with 14, Sydney with 1, Tel Aviv-Yafo with 1, Toronto with 2, Washington with 1, Yokohama with 1, Zhongli District with 1, Zurich with 1.
+
+These are the following countires with the average number of products as follows:
+
 "Australia"	1
 "Austria"	1
 "Belarus"	1
