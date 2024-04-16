@@ -104,8 +104,8 @@ WITH city_sum_of_orders AS (
 SELECT 
 	als.city, 
 	als.v2_product_category,
-	SUM(cso.sum_of_orders),
-	RANK () OVER (PARTITION BY als.city ORDER BY SUM(cso.sum_of_orders) DESC) AS rank
+	cso.sum_of_orders,
+	RANK () OVER (PARTITION BY als.city ORDER BY cso.sum_of_orders DESC) AS rank
 FROM all_sessions als
 JOIN city_sum_of_orders cso
 	ON als.full_visitor_id = cso.full_visitor_id
@@ -129,8 +129,8 @@ WITH country_sum_of_orders AS (
 SELECT 
 	als.country, 
 	als.v2_product_category,
-	SUM(cso.sum_of_orders),
-	RANK () OVER (PARTITION BY als.country ORDER BY SUM(cso.sum_of_orders) DESC) AS rank
+	cso.sum_of_orders,
+	RANK () OVER (PARTITION BY als.country ORDER BY cso.sum_of_orders DESC) AS rank
 FROM all_sessions als
 JOIN country_sum_of_orders cso
 	ON als.full_visitor_id = cso.full_visitor_id
@@ -145,7 +145,7 @@ WHERE rank = 1
 
 Answer:
 
-
+I do not think that there is a pattern on product categories from visitors in each city and country.  For example, the largest product category sold in the city of Mountain View, United States is stickers for 5,776 units.  However, the largest product category sold in the country of the United States is dog frisbee for 11,328 units.  We do not know which cities sold dog frisbess in the United States.  Hypotheically, if it were discouvered that the majority of these products were purchased in the city of Mountain View, United States, then the largest product category sold should be dog frisbees.
 
 
 
