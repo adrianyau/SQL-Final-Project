@@ -158,7 +158,7 @@ DRAFT:
 WITH top_selling_products_by_city AS (
 
 WITH number_of_orders AS (
-	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS num_of_visitors
+	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS top_sellers
 	FROM analytics
 	WHERE units_sold IS NOT NULL
 	GROUP BY full_visitor_id
@@ -166,13 +166,13 @@ WITH number_of_orders AS (
 SELECT
 	als.city, 
 	als.v2_product_name, 
-	noo.num_of_visitors,
-	RANK () OVER(PARTITION BY als.city ORDER BY noo.num_of_visitors DESC) AS rank
+	noo.top_sellers,
+	RANK () OVER(PARTITION BY als.city ORDER BY noo.top_sellers DESC) AS rank
 FROM all_sessions als
 JOIN number_of_orders noo
 	ON als.full_visitor_id = noo.full_visitor_id
 WHERE city != '(not set)' AND city != 'not available in demo dataset' AND als.v2_product_category != '${escCatTitle}'
-GROUP BY als.city, als.v2_product_name, noo.num_of_visitors
+GROUP BY als.city, als.v2_product_name, noo.top_sellers
 ORDER BY als.city
 )
 SELECT *
@@ -183,7 +183,7 @@ WHERE rank = 1
 WITH top_selling_products_by_country AS (
 
 WITH number_of_orders AS (
-	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS num_of_visitors
+	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS top_sellers
 	FROM analytics
 	WHERE units_sold IS NOT NULL
 	GROUP BY full_visitor_id
@@ -191,18 +191,19 @@ WITH number_of_orders AS (
 SELECT
 	als.country, 
 	als.v2_product_name, 
-	noo.num_of_visitors,
-	RANK () OVER(PARTITION BY als.country ORDER BY noo.num_of_visitors DESC) AS rank
+	noo.top_sellers,
+	RANK () OVER(PARTITION BY als.country ORDER BY noo.top_sellers DESC) AS rank
 FROM all_sessions als
 JOIN number_of_orders noo
 	ON als.full_visitor_id = noo.full_visitor_id
 WHERE als.country != '(not set)' AND als.v2_product_category != '${escCatTitle}'
-GROUP BY als.country, als.v2_product_name, noo.num_of_visitors
+GROUP BY als.country, als.v2_product_name, noo.top_sellers
 ORDER BY als.country
 )
 SELECT *
 FROM top_selling_products_by_country
 WHERE rank = 1
+```
 
 
 
