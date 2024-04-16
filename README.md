@@ -6,7 +6,7 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 ## Process
 1. Five (5) CSV files were downloaded and imported into pgAdmin4.  For sake of simplicity with datatypes and time to upload the CSV files, 'VARCHAR' and 'INTEGER', whether 'INT' or 'BIG INT' depending on the length of numbers, were applied.  Names labeled in the 'Tables' and 'Columns' were case-sensitive and space-sensitive, so the names were typed in lower capitals and words were separate replacing undescores '_' over spaces.
 
-2. The primary key could be identified as the products' SKU between the 'products' and 'sales_report' tables as they were unique and NOT NULL.  For the 'all_sessions' and 'analytics' tables, it appeared that the primary key could be the 'visit_id' column.  Initially, I thought that the 'full_visitor_id' column could be a primary key, but I discovered that multiple webpages could be coming from the same visitor.  Instead, I should have thought that every page visited would generate its own unique 'visit_id'.  When I tried to assign the primary key for the 'visit_id', there was an error due to key being duplicated and it could not create a unique index.  In addition, the 'product_sku' column could be found in the 'all_sessions' table, but the foreign key could not be assigned due to duplication.  The 'DISTINCT()' function would have removed any duplicates, but it was suggested not to alter the dataset in the tables to preserve the original raw data for the purpose of this project.
+2. The primary key could be identified as the products' SKU between the 'products', 'sales_report', and 'sales_by_sku' tables as they were unique and NOT NULL.  For the 'all_sessions' and 'analytics' tables, it appeared that the primary key could be the 'visit_id' column.  Initially, I thought that the 'full_visitor_id' column could be a primary key, but I discovered that multiple webpages could be coming from the same visitor.  Instead, I should have thought that every page visited would generate its own unique 'visit_id'.  When I tried to assign the primary key for the 'visit_id', there was an error due to key being duplicated and it could not create a unique index.  In addition, the 'product_sku' column could be found in the 'all_sessions' table, but the foreign key could not be assigned due to duplication.  The 'DISTINCT()' function would have removed any duplicates, but it was suggested not to alter the dataset in the tables to preserve the original raw data for the purpose of this project.
 
 3. As for data cleaning and manipulation, minor corrections could be applied, such as conversion of numeric values to 'date' and 'time' formats in their respective columns; addition [CONCAT()] or deletion [TRIM()] of special characters; or the removal of extra spaces within the names in products descriptions.  The hint provided in the 'assignment.md' file suggested that the conversion of the unit/product cost divided by 1,000,000 means that this conversion needs to apply to the calculation of revenue as it is derived mathematically from the formula [unit price * quantity].  Most notably, I felt that the missing information not set or available for the cities and countries could play a factor in the exercise to answer the five (5) data questions.
 
@@ -14,11 +14,14 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 
 5. As for my own three (3) data questions, I wanted to showcase other SQL skills learned from the Data Analytics Bootcamp from the last two weeks, as well as applying some business accumen working on this datset from a fictional e-Commerce company.  For example, I wanted to compare the amount of different products (e.g., performance wear) between men and women, plus I applied the UNION operator to segement category list and tally the total product count to see any disparity on sportswear between genders.  Another example is taking a step further with the 'Rank Window' function ranking the 'Top-10 Accessories' list and include the type of currency along with the product price in the same cell.  My last example is learning about sentiment scores and how I could use the SQL query to find out about a specific product and the buyers' emotional response toward their product purchase.
 
-6. As for quality assurance, 
+6. As for quality assurance, ???
 
 ## Results
-- Duplication is evident in the database with webpage information.
-- 
+- Duplication was evident in the database, whether if there was product duplication or webpage duplication.
+- With products could have the same identical item, but differ in minor details, such as sizing and colour.
+- With webpages, users could be clicking on a page or link whether it was double-clicking, multi-clicking, clicking by error, or clicking back-and-forth.
+- Some product SKUs were shown throughout the dataset, but they did not exist suggesting the products were discontinued or non-existent.
+- Results to the questions provided could be skewed as there were still incomplete information, particularily the cities and countries of the customers.
 
 ## Challenges 
 - Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
