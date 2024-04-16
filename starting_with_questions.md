@@ -95,8 +95,8 @@ DRAFT:
 ```sql
 WITH top_product_categories_by_city AS (
 
-WITH num_of_orders AS (
-	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS num_of_visitors
+WITH city_sum_of_orders AS (
+	SELECT DISTINCT full_visitor_id, SUM(units_sold) AS sum_of_orders
 	FROM analytics
 	WHERE units_sold IS NOT NULL
 	GROUP BY full_visitor_id
@@ -104,13 +104,13 @@ WITH num_of_orders AS (
 SELECT 
 	als.city, 
 	als.v2_product_category,
-	SUM(noo.num_of_visitors),
-	RANK () OVER (PARTITION BY als.city ORDER BY noo.num_of_visitors DESC) AS rank
+	SUM(cso.sum_of_orders),
+	RANK () OVER (PARTITION BY als.city ORDER BY SUM(cso.sum_of_orders) DESC) AS rank
 FROM all_sessions als
-JOIN num_of_orders noo
-	ON als.full_visitor_id = noo.full_visitor_id
+JOIN city_sum_of_orders cso
+	ON als.full_visitor_id = cso.full_visitor_id
 WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
-GROUP BY als.city, als.v2_product_category, noo.num_of_visitors
+GROUP BY als.city, als.v2_product_category, cso.sum_of_orders
 )
 
 SELECT *
@@ -118,10 +118,10 @@ FROM top_product_categories_by_city
 WHERE rank = 1
 
 
-WITH top_categories_by_country AS (
+WITH top_product_categories_by_country AS (
 
-WITH num_of_orders AS (
-	SELECT DISTINCT full_visitor_id, COUNT(full_visitor_id) AS num_of_visitors
+WITH country_sum_of_orders AS (
+	SELECT DISTINCT full_visitor_id, SUM(units_sold) AS sum_of_orders
 	FROM analytics
 	WHERE units_sold IS NOT NULL
 	GROUP BY full_visitor_id
@@ -129,17 +129,17 @@ WITH num_of_orders AS (
 SELECT 
 	als.country, 
 	als.v2_product_category,
-	SUM(noo.num_of_visitors),
-	RANK () OVER (PARTITION BY als.country ORDER BY noo.num_of_visitors DESC) AS rank
+	SUM(cso.sum_of_orders),
+	RANK () OVER (PARTITION BY als.country ORDER BY SUM(cso.sum_of_orders) DESC) AS rank
 FROM all_sessions als
-JOIN num_of_orders noo
-	ON als.full_visitor_id = noo.full_visitor_id
+JOIN country_sum_of_orders cso
+	ON als.full_visitor_id = cso.full_visitor_id
 WHERE als.country != '(not set)' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
-GROUP BY als.country, als.v2_product_category, noo.num_of_visitors
+GROUP BY als.country, als.v2_product_category, cso.sum_of_orders
 )
 
 SELECT *
-FROM top_categories_by_country
+FROM top_product_categories_by_country
 WHERE rank = 1
 ```
 
