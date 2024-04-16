@@ -18,6 +18,6 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 - Figuring out how to input SQL code in proper sequence to get the data output.  With long lists of code, it can be difficult to pin down data entry mistakes and typos.
 
 ## Future Goals
-- Better use of time and efficiencies to gather, sort, and obtain the results in a short stint of like.
+- Better use of time and efficiencies to gather, sort, and obtain the results in a short stint of time.
 - Learn intermidate and advanced SQL functions to apply different combinations of code to achieve various desired outcomes.
 - Not only do I like expand and sharpen my understanding of the SQL language, but I would like to gain insight of the data from a business perspective.  For the SQL Final Project in particular, I would have liked to know how an e-commerce operates and understand what sort of information is important and relevant to their stakeholders.
