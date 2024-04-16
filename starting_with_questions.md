@@ -331,7 +331,7 @@ DRAFT:
 
 ```sql
 WITH revenue AS (
-	SELECT DISTINCT full_visitor_id, revenue / 1000000, units_sold, unit_price
+	SELECT DISTINCT full_visitor_id, revenue / 1000000 AS revenue
 	FROM analytics
 	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
 )
@@ -349,7 +349,7 @@ WITH revenue AS (
 	FROM analytics
 	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
 )
-SELECT als.country, SUM(r.revenue) AS sum_revenue,
+SELECT als.country, SUM(r.revenue) AS sum_revenue
 FROM all_sessions als
 JOIN revenue r
 	ON als.full_visitor_id = r.full_visitor_id
@@ -364,37 +364,38 @@ Answer:
 
 Here is the summary of the revenue impact generated from each city:
 
-Mountain View at 10,470,949,996, San Bruno at 4,230,990,000, 
-Sunnyvale at 2,999,357,772, 
-New York at 2,996,275,708, 
-Chicago	at 1,383,630,000, 
-Kirkland at 1,103,520,000, 
-San Francisco at 954,103,332, 
-Jersey City at 933,850,000, 
-Charlotte at 932,885,550, 
-Los Angeles at 926,009,999, 
-Seattle	at 732,825,713, 
-Palo Alto at 709,000,000, 
-Austin at 643,689,998, 
-Milpitas at 494,300,000, 
-Toronto	at 447,480,000, 
-Ann Arbor at 355,879,999, 
-Salem at 246,430,000, 
-San Jose at 236,350,000, 
-Cambridge at 147,430,000, 
-Fremont	at 124,000,000, 
-Atlanta	at 83,000,000, 
-South San Francisco at 82,420,000, 
-Denver at 41,980,000, 
-Yokohama at 30,880,000, and
-Zurich at 16,990,000.
+Mountain View at 10,439, 
+San Bruno at 4,229, 
+Sunnyvale at 2,991, 
+New York at 2,977, 
+Chicago	at 1,382, 
+Kirkland at 1,098, 
+San Francisco at 950, 
+Jersey City at 933, 
+Charlotte at 922, 
+Los Angeles at 756, 
+Seattle	at 726, 
+Palo Alto at 709, 
+Austin at 638, 
+Milpitas at 490, 
+Toronto	at 445, 
+Ann Arbor at 350, 
+Salem at 241, 
+San Jose at 233, 
+Cambridge at 144, 
+Fremont	at 124, 
+Atlanta	at 83, 
+South San Francisco at 81,
+Denver at 41,
+Yokohama at 29, and
+Zurich at 16.
 
 Here is the summary of the revenue impact generated from each country:
 
-United States at 115,229,279,900, 
-Canada at 487,670,000, 
-Germany at 69,980,000, 
-Japan at 30,880,000, and 
-Switzerland at 16,990,000.
+United States at 110,752, 
+Canada at 445,
+Germany at 69,
+Japan at 29, and 
+Switzerland at 16.
 
 
