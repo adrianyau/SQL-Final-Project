@@ -254,31 +254,30 @@ Answer:
 
 Here is the summary of the revenue impact generated from each city:
 
-Mountain View 10470949996
-San Bruno 4230990000
-Sunnyvale 2999357772
-New York 2996275708
-Chicago	1383630000
-Kirkland 1103520000
-San Francisco 954103332
-Jersey City 933850000
-Charlotte 932885550
-Los Angeles 926009999
-Seattle	732825713
-Palo Alto 709000000
-Austin 643689998
-Milpitas 494300000
-Toronto	447480000
-Ann Arbor 355879999
-Salem 246430000
-San Jose 236350000
-Cambridge 147430000
-Fremont	124000000
-Atlanta	83000000
-South San Francisco 82420000
-Denver 41980000
-Yokohama 30880000
-Zurich	16990000
+Mountain View at 10,470,949,996, San Bruno at 4,230,990,000, 
+Sunnyvale at 2,999,357,772, 
+New York at 2,996,275,708, 
+Chicago	at 1,383,630,000, 
+Kirkland at 1,103,520,000, 
+San Francisco at 954,103,332, 
+Jersey City at 933,850,000, 
+Charlotte at 932,885,550, 
+Los Angeles at 926,009,999, 
+Seattle	at 732,825,713, 
+Palo Alto at 709,000,000, 
+Austin at 643,689,998, 
+Milpitas at 494,300,000, 
+Toronto	at 447,480,000, 
+Ann Arbor at 355,879,999, 
+Salem at 246,430,000, 
+San Jose at 236,350,000, 
+Cambridge at 147,430,000, 
+Fremont	at 124,000,000, 
+Atlanta	at 83,000,000, 
+South San Francisco at 82,420,000, 
+Denver at 41,980,000, 
+Yokohama at 30,880,000, and
+Zurich at 16,990,000
 
 Here is the summary of the revenue impact generated from each country:
 
