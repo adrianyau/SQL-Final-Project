@@ -260,7 +260,7 @@ The top product category for each city is as follows:
 |Zurich        |Home/Apparel/Men's/Men's-T-Shirts/|
 
 
-The top categories for each country is as follows:
+The top category for each country is as follows:
 
 |country       |v2_product_category|
 |--------------|-------------------|
@@ -405,7 +405,7 @@ This is the top-selling product from each city:
 |Zurich        |Home/Apparel/Men's/Men's-T-Shirts/|
 
 
-This is the top selling product in each country:
+This is the top selling product from each country:
 
 |country       |v2_product_category|
 |--------------|-------------------|
