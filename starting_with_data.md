@@ -1,13 +1,28 @@
 Question 1: 
 
-What is the total number of performance wear categorized between genders?
+How many 'Performance Wear' items are listed for sale between genders?
 
 SQL Queries:
 
 ```sql
-SELECT v2_product_category, COUNT(v2_product_category) AS num_of_performance_wear
-FROM all_sessions
-WHERE v2_product_category LIKE '%Performance Wear%'
+WITH men_performance_apparel AS (
+	SELECT v2_product_category, v2_product_name
+	FROM all_sessions
+	WHERE v2_product_category LIKE '%Men%' AND v2_product_category LIKE '%Performance Wear%'
+	GROUP BY v2_product_category, v2_product_name
+),
+women_performance_apparel AS (
+	SELECT v2_product_category, v2_product_name
+	FROM all_sessions
+	WHERE v2_product_category LIKE '%Women%' AND v2_product_category LIKE '%Performance Wear%'
+	GROUP BY v2_product_category, v2_product_name
+)
+SELECT v2_product_category AS product_category_by_gender, COUNT(v2_product_category) AS num_of_performance_items
+FROM men_performance_apparel
+GROUP BY v2_product_category
+UNION
+SELECT v2_product_category, COUNT(v2_product_category)
+FROM women_performance_apparel
 GROUP BY v2_product_category
 ```
 
