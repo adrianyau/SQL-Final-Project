@@ -400,21 +400,27 @@ Answer:
 
 Here is the summary of the revenue impact generated from each city:
 
-New York at 1,103,
-Sunnyvale at 608, 
-Mountain View at 481, 
-Seattle at 357, 
-Chicago at 306, 
-San Francisco at 276, 
-San Jose at 153, 
-Palo Alto at 151, 
-Tel Aviv-Yafo at 32, and 
-Zurich at 16.
+|city          |sum_revenue|
+|--------------|-----------|
+|New York      |1103       |
+|Sunnyvale     |608        |
+|Mountain View |481        |
+|Seattle       |357        |
+|Chicago       |306        |
+|San Francisco |276        |
+|San Jose      |153        |
+|Palo Alto     |151        |
+|Tel Aviv-Yafo |32         |
+|Zurich        |16         |
+
 
 Here is the summary of the revenue impact generated from each country:
 
-United States at 4,629
-Israel at 32, and
-Switzerland at 16.
+|country       |sum_revenue|
+|--------------|-----------|
+|United States |4629       |
+|Israel        |32         |
+|Switzerland   |16         |
+
 
 
