@@ -26,10 +26,17 @@ ORDER BY total_transaction_revenue DESC
 
 Answer:
 
-These are the cities with the highest level of transaction revenues on the site: Sunnyvale at 849.24, Sydney at 358.00, Austin at 35.78, and Mountain View at 8.98.
+These are the cities with the highest level of transaction revenues on the site: 
 
-These are the countries with the highest level of transaction revenues on the site: United States at 3,208.95 and Australia at 358.00.
+Sunnyvale at 849.24, 
+Sydney at 358.00, 
+Austin at 35.78, and 
+Mountain View at 8.98.
 
+These are the countries with the highest level of transaction revenues on the site: 
+
+United States at 3,208.95 and 
+Australia at 358.00.
 
 
 
@@ -75,11 +82,114 @@ Answer:
 
 These are the following cities with the average number of products as follows:
 
-Ahmedabad with 1, Ann Arbor with 1, Atlanta with 5, Austin with	5, Bangkok with	1, Berlin with 1, Bogota with 1, Cambridge with 2, Charlotte with 10, Chicago with 9, Courbevoie with 1, Cupertino with 1, Dallas with 1, Denver with 2, Detroit with 1, Dublin with 1, Fremont with 1, Hamburg with 2, Helsinki with 1, Hong Kong with	2, Houston with	3, Hyderabad with 2, Irvine with 1, Jakarta with 1, Jersey City with 8, Kirkland with 2, Kitchener with 1, London with 1, Los Angeles with 5, Madrid with 1, Milpitas with 4, Minato with 1, Montevideo with 1, Mountain View with 13, Munich with 1, Nashville with 6, New York with 11, Osaka with 1, Palo Alto with 1, Paris with 3, Phoenix with 1, Pittsburgh with 4, Salem with 11, San Bruno with 71, San Diego with 1, San Francisco with 1, San Jose with 12, Santa Clara with 1, Santa Monica with 2, Santiago with 1, Seattle with 15, Seoul with 1, Singapore with 1, South San Francisco with 1, Stockholm with 1, Sunnyvale with 14, Sydney with 1, Tel Aviv-Yafo with 1, Toronto with 2, Washington with 1, Yokohama with 1, Zhongli District with 1, and Zurich with 1.
+Ahmedabad with 1, 
+Ann Arbor with 1, 
+Atlanta with 5, 
+Austin with 5, 
+Bangkok with 1, 
+Berlin with 1, 
+Bogota with 1, 
+Cambridge with 2, 
+Charlotte with 10, 
+Chicago with 9, 
+Courbevoie with 1, 
+Cupertino with 1, 
+Dallas with 1, 
+Denver with 2, 
+Detroit with 1, 
+Dublin with 1, 
+Fremont with 1, 
+Hamburg with 2, 
+Helsinki with 1, 
+Hong Kong with 2, 
+Houston with 3, 
+Hyderabad with 2, 
+Irvine with 1, 
+Jakarta with 1, 
+Jersey City with 8, 
+Kirkland with 2, 
+Kitchener with 1, 
+London with 1, 
+Los Angeles with 5, 
+Madrid with 1, 
+Milpitas with 4, 
+Minato with 1, 
+Montevideo with 1, 
+Mountain View with 13, 
+Munich with 1, 
+Nashville with 6, 
+New York with 11, 
+Osaka with 1, 
+Palo Alto with 1, 
+Paris with 3, 
+Phoenix with 1, 
+Pittsburgh with 4, 
+Salem with 11, 
+San Bruno with 71, 
+San Diego with 1, 
+San Francisco with 1, 
+San Jose with 12, 
+Santa Clara with 1, 
+Santa Monica with 2, 
+Santiago with 1, 
+Seattle with 15, 
+Seoul with 1, 
+Singapore with 1, 
+South San Francisco with 1, 
+Stockholm with 1, 
+Sunnyvale with 14, 
+Sydney with 1, 
+Tel Aviv-Yafo with 1, 
+Toronto with 2, 
+Washington with 1, 
+Yokohama with 1, 
+Zhongli District with 1, and 
+Zurich with 1.
 
 These are the following countires with the average number of products as follows:
 
-Australia with 1, Austria with 1, Belarus with 1, Belgium with 1, Bulgaria with 2, Canada with 3, Chile with 1, Colombia with 1, Czechia with 25, Denmark with 1, Dominican Republic with 1, Egypt with 1, Finland with 1, France with 1, Germany with 1, Guatemala with 1, Hong Kong with 2, India with 1, Indonesia with 1, Ireland with 1, Israel with 1, Japan with 2, Maldives with 1, Mexico with 2, Netherlands with 1, Norway with 1, Panama with 1, Portugal with 1, Romania with 1, Russia with 1, Singapore with 1, South Korea with	1, Spain with 1, Sri Lanka with 1, Sweden with 1, Switzerland with 1, Taiwan with 1, Thailand with 1, United Kingdom with 1, United States with 27, Uruguay with 1, and Vietnam with 1.
+Australia with 1, 
+Austria with 1, 
+Belarus with 1, 
+Belgium with 1, 
+Bulgaria with 2, 
+Canada with 3, 
+Chile with 1, 
+Colombia with 1, 
+Czechia with 25, 
+Denmark with 1, 
+Dominican Republic with 1, 
+Egypt with 1, 
+Finland with 1, 
+France with 1, 
+Germany with 1, 
+Guatemala with 1, 
+Hong Kong with 2, 
+India with 1, 
+Indonesia with 1, 
+Ireland with 1, 
+Israel with 1, 
+Japan with 2, 
+Maldives with 1, 
+Mexico with 2, 
+Netherlands with 1, 
+Norway with 1, 
+Panama with 1, 
+Portugal with 1, 
+Romania with 1, 
+Russia with 1, 
+Singapore with 1, 
+South Korea with 1, 
+Spain with 1, 
+Sri Lanka with 1, 
+Sweden with 1, 
+Switzerland with 1, 
+Taiwan with 1, 
+Thailand with 1, 
+United Kingdom with 1, 
+United States with 27, 
+Uruguay with 1, and 
+Vietnam with 1.
 
 
 
@@ -277,10 +387,14 @@ Atlanta	at 83,000,000,
 South San Francisco at 82,420,000, 
 Denver at 41,980,000, 
 Yokohama at 30,880,000, and
-Zurich at 16,990,000
+Zurich at 16,990,000.
 
 Here is the summary of the revenue impact generated from each country:
 
-United States at 115,229,279,900, Canada at 48,767,0000, Germany at 69,980,000, Japan at 30,880,000, and Switzerland at 16,990,000.
+United States at 115,229,279,900, 
+Canada at 48,767,0000, 
+Germany at 69,980,000, 
+Japan at 30,880,000, and 
+Switzerland at 16,990,000.
 
 
