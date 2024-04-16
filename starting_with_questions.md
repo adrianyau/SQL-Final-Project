@@ -199,7 +199,7 @@ Vietnam with 1.
 SQL Queries:
 
 ```sql
-/* The product categories were ranked and partitioned by each city to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each city */
+/* The product categories were ranked and partitioned by each city to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each city. */
 WITH top_product_categories_by_city AS (
 
 WITH city_sum_of_orders AS (
@@ -224,7 +224,7 @@ SELECT *
 FROM top_product_categories_by_city
 WHERE rank = 1
 
-/* The product categories were ranked and partitioned by each country to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each country */
+/* The product categories were ranked and partitioned by each country to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each country. */
 WITH top_product_categories_by_country AS (
 
 WITH country_sum_of_orders AS (
@@ -261,8 +261,7 @@ I do not think that there is a pattern on product categories from visitors in ea
 
 SQL Queries:
 
-DRAFT:
-
+/* The top selling product from each city was determined by joining the product name and city based on the number of orders.  The product with the most number of order was ranked and filtered out by cities. */
 ```sql
 WITH top_selling_products_by_city AS (
 
@@ -289,6 +288,7 @@ FROM top_selling_products_by_city
 WHERE rank = 1
 
 
+/* The top selling product from each country was determined by joining the product name and country based on the number of orders.  The product with the most number of order was ranked and filtered out by countries. */
 WITH top_selling_products_by_country AS (
 
 WITH number_of_orders AS (
