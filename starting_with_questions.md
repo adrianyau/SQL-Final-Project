@@ -81,48 +81,46 @@ Ahmedabad with 1, Ann Arbor with 1, Atlanta with 5, Austin with	5, Bangkok with	
 
 These are the following countires with the average number of products as follows:
 
-"Australia"	1
-"Austria"	1
-"Belarus"	1
-"Belgium"	1
-"Bulgaria"	2
-"Canada"	3
-"Chile"	1
-"Colombia"	1
-"Czechia"	25
-"Denmark"	1
-"Dominican Republic"	1
-"Egypt"	1
-"Finland"	1
-"France"	1
-"Germany"	1
-"Guatemala"	1
-"Hong Kong"	2
-"India"	1
-"Indonesia"	1
-"Ireland"	1
-"Israel"	1
-"Japan"	2
-"Maldives"	1
-"Mexico"	2
-"Netherlands"	1
-"Norway"	1
-"Panama"	1
-"Portugal"	1
-"Romania"	1
-"Russia"	1
-"Singapore"	1
-"South Korea"	1
-"Spain"	1
-"Sri Lanka"	1
-"Sweden"	1
-"Switzerland"	1
-"Taiwan"	1
-"Thailand"	1
-"United Kingdom"	1
-"United States"	27
-"Uruguay"	1
-"Vietnam"	1
+Australia at 1, Austria at 1, Belarus at 1
+Belgium at 1
+Bulgaria"	2
+Canada"	3
+Chile"	1
+Colombia"	1
+Czechia"	25
+Denmark"	1
+Dominican Republic"	1
+Egypt"	1
+Finland"	1
+France"	1
+Germany"	1
+Guatemala"	1
+Hong Kong"	2
+India"	1
+Indonesia"	1
+Ireland"	1
+Israel"	1
+Japan"	2
+Maldives"	1
+Mexico"	2
+Netherlands"	1
+Norway"	1
+Panama"	1
+Portugal"	1
+Romania"	1
+Russia"	1
+Singapore"	1
+South Korea"	1
+Spain"	1
+Sri Lanka"	1
+Sweden"	1
+Switzerland"	1
+Taiwan"	1
+Thailand"	1
+United Kingdom"	1
+United States"	27
+Uruguay"	1
+Vietnam"	1
 
 
 
