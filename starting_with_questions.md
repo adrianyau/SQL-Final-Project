@@ -223,6 +223,7 @@ Answer:
 
 SQL Queries:
 
+```sql
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
 	FROM analytics
