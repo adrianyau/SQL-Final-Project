@@ -11,7 +11,11 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
 
 ## Challenges 
-(discuss challenges you faced in the project)
+- Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
+- Ambiguity of questions being asked to answer as it depends on our individual responses and the validity of our reasoning to the audience.
+- Putting the lectures and modules learned daily from the Bootcamp to use in real-life practice.
+- Getting used to reading the error messages flagged by pgAdmin 4 and understand what they mean.
+- Figuring out how to input SQL code in proper sequence to get the data output.  With long lists of code, it can be difficult to pin down data entry mistakes and typos.
 
 ## Future Goals
 - Better use of time and efficiencies to gather, sort, and obtain the results in a short stint of like.
