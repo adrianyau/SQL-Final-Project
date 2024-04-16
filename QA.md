@@ -25,7 +25,7 @@ FROM all_sessions
 WHERE city = '(not set)' OR city = 'not available in demo dataset' OR country = '(not set)'
 ```
 
-3. In the 'analytics' table where it tracks website information data, duplications can occur because user can double-click on a page link, re-click on a page link if the website does not respond, or even mis-click on an undesired page link.  To remove such duplications, DISTINCT() function was used:
+3. In the 'analytics' table where it tracks website information data, duplications can occur because user can double-click on a page link, re-click on a page link if the website does not respond, or even clicking back and forth between page links.  To remove such duplications, DISTINCT() function was used:
 
  ```sql
 SELECT *
