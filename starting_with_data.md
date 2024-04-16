@@ -1,10 +1,17 @@
-Question 1: 
+Question 1: What is the number of performance wear categorized between genders?
 
 SQL Queries:
 
+```sql
+SELECT v2_product_category, COUNT(v2_product_category) AS num_of_performance_wear
+FROM all_sessions
+WHERE v2_product_category LIKE '%Performance Wear%'
+GROUP BY v2_product_category
+```
+
 Answer: 
 
-
+There are 104 items for Men's Performance Wear and there are 48 items for Women's Performance Wear.
 
 Question 2: 
 
