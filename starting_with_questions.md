@@ -220,20 +220,28 @@ SQL Queries:
 DRAFT:
 
 ```sql
-SELECT als.city, SUM(a.revenue) as sum_revenue, SUM(a.units_sold * a.unit_price) as calc_revenue
+WITH revenue AS (
+	SELECT DISTINCT full_visitor_id, revenue, units_sold, unit_price
+	FROM analytics
+)
+SELECT als.city, SUM(r.revenue) AS sum_revenue, SUM(r.units_sold * r.unit_price) AS calc_revenue
 FROM all_sessions als
-JOIN analytics a
-	ON als.full_visitor_id = a.full_visitor_id
-WHERE city != '(not set)' AND city != 'not available in demo dataset' AND units_sold IS NOT NULL AND revenue IS NOT NULL
+JOIN revenue r
+	ON als.full_visitor_id = r.full_visitor_id
+WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset' AND units_sold IS NOT NULL AND r.revenue IS NOT NULL
 GROUP BY als.city
 ORDER BY sum_revenue DESC, calc_revenue DESC
 
 
-SELECT als.country, SUM(a.revenue) as sum_revenue, SUM(a.units_sold * a.unit_price) as calc_revenue
+WITH revenue AS (
+	SELECT DISTINCT full_visitor_id, revenue, units_sold, unit_price
+	FROM analytics
+)
+SELECT als.country, SUM(r.revenue) AS sum_revenue, SUM(r.units_sold * r.unit_price) AS calc_revenue
 FROM all_sessions als
-JOIN analytics a
-	ON als.full_visitor_id = a.full_visitor_id
-WHERE country != '(not set)' AND units_sold IS NOT NULL AND revenue IS NOT NULL
+JOIN revenue r
+	ON als.full_visitor_id = r.full_visitor_id
+WHERE als.country != '(not set)' AND units_sold IS NOT NULL AND r.revenue IS NOT NULL
 GROUP BY als.country
 ORDER BY sum_revenue DESC, calc_revenue DESC
 ```
@@ -242,9 +250,41 @@ ORDER BY sum_revenue DESC, calc_revenue DESC
 
 Answer:
 
-No, because there are two different revenues provided from the database.  One set of data has the revenues, and the other set of data can be used multiplying the number of units sold and unit price, but it does not match the revenue originally on the table.
+Here is the summary of the revenue impact generated from each city:
 
+"Mountain View"	10470949996	10243700000
+"San Bruno"	4230990000	4199990000
+"Sunnyvale"	2999357772	2947580000
+"New York"	2996275708	2906790000
+"Chicago"	1383630000	1339630000
+"Kirkland"	1103520000	1087520000
+"San Francisco"	954103332	909270000
+"Jersey City"	933850000	913850000
+"Charlotte"	932885550	924130000
+"Los Angeles"	926009999	910010000
+"Seattle"	732825713	717540000
+"Palo Alto"	709000000	685000000
+"Austin"	643689998	614190000
+"Milpitas"	494300000	472300000
+"Toronto"	447480000	428480000
+"Ann Arbor"	355879999	318880000
+"Salem"	246430000	223180000
+"San Jose"	236350000	211350000
+"Cambridge"	147430000	137430000
+"Fremont"	124000000	119000000
+"Atlanta"	83000000	79000000
+"South San Francisco"	82420000	75420000
+"Denver"	41980000	37980000
+"Yokohama"	30880000	28880000
+"Zurich"	16990000	13990000
 
+Here is the summary of the revenue impact generated from each country:
+
+"United States"	115229279900	113529280000
+"Canada"	487670000	467670000
+"Germany"	69980000	68980000
+"Japan"	30880000	28880000
+"Switzerland"	16990000	13990000
 
 
 
