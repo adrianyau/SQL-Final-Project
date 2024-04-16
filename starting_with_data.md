@@ -1,4 +1,4 @@
-Question 1: What is the number of performance wear categorized between genders?
+Question 1: What is the total number of performance wear categorized between genders?
 
 SQL Queries:
 
