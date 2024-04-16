@@ -1,4 +1,6 @@
-Question 1: What is the total number of performance wear categorized between genders?
+Question 1: 
+
+What is the total number of performance wear categorized between genders?
 
 SQL Queries:
 
@@ -13,7 +15,9 @@ Answer:
 
 There are 104 items under Men's Performance Wear and there are 48 items under Women's Performance Wear.
 
-Question 2: Of all 'Accessories', rank the 'Top-10' most expensive items in USD.
+Question 2: 
+
+Of all 'Accessories', rank the 'Top-10' most expensive items in USD.
 
 SQL Queries:
 
