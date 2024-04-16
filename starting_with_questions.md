@@ -109,7 +109,7 @@ SELECT
 FROM all_sessions als
 JOIN num_of_orders noo
 	ON als.full_visitor_id = noo.full_visitor_id
-WHERE city != '(not set)' AND city != 'not available in demo dataset' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
+WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.city, als.v2_product_category, noo.num_of_visitors
 )
 
@@ -134,7 +134,7 @@ SELECT
 FROM all_sessions als
 JOIN num_of_orders noo
 	ON als.full_visitor_id = noo.full_visitor_id
-WHERE city != '(not set)' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
+WHERE als.country != '(not set)' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.country, als.v2_product_category, noo.num_of_visitors
 )
 
