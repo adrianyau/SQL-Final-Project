@@ -117,36 +117,39 @@ These are the following cities with the average number of products as follows:
 
 These are the following countires with the average number of products as follows:
 
-Australia: 1, 
-Austria: 1, 
-Belgium: 1, 
-Bulgaria: 2, 
-Canada: 3, 
-Chile: 1, 
-Colombia: 1, 
-Denmark: 1, 
-Egypt: 1, 
-France: 1, 
-Germany: 1, 
-Hong Kong: 1, 
-India: 1, 
-Indonesia: 1, 
-Ireland: 1, 
-Israel: 1, 
-Japan: 2, 
-Maldives: 1, 
-Mexico: 2, 
-Netherlands: 1, 
-Romania: 1, 
-Singapore: 1, 
-South Korea: 1, 
-Sweden:	1, 
-Switzerland: 1, 
-Taiwan: 1, 
-Thailand: 1, 
-United Kingdom: 1, 
-United States: 2, and
-Vietnam: 1.
+|country       |avg|
+|--------------|---|
+|Australia     |1  |
+|Austria       |1  |
+|Belgium       |1  |
+|Bulgaria      |2  |
+|Canada        |3  |
+|Chile         |1  |
+|Colombia      |1  |
+|Denmark       |1  |
+|Egypt         |1  |
+|France        |1  |
+|Germany       |1  |
+|Hong Kong     |1  |
+|India         |1  |
+|Indonesia     |1  |
+|Ireland       |1  |
+|Israel        |1  |
+|Japan         |2  |
+|Maldives      |1  |
+|Mexico        |2  |
+|Netherlands   |1  |
+|Romania       |1  |
+|Singapore     |1  |
+|South Korea   |1  |
+|Sweden        |1  |
+|Switzerland   |1  |
+|Taiwan        |1  |
+|Thailand      |1  |
+|United Kingdom|1  |
+|United States |2  |
+|Vietnam       |1  |
+
 
 
 
