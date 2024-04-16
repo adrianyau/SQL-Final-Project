@@ -81,22 +81,7 @@ Ahmedabad with 1, Ann Arbor with 1, Atlanta with 5, Austin with	5, Bangkok with	
 
 These are the following countires with the average number of products as follows:
 
-Australia at 1, Austria at 1, Belarus at 1
-Belgium at 1
-Bulgaria"	2
-Canada"	3
-Chile"	1
-Colombia"	1
-Czechia"	25
-Denmark"	1
-Dominican Republic"	1
-Egypt"	1
-Finland"	1
-France"	1
-Germany"	1
-Guatemala"	1
-Hong Kong"	2
-India"	1
+Australia at 1, Austria at 1, Belarus at 1, Belgium at 1, Bulgaria at 2, Canada at 3, Chile at 1, Colombia at 1, Czechia at 25, Denmark at 1, Dominican Republic at 1, Egypt at 1, Finland at 1, France at 1, Germany at 1, Guatemala at 1, Hong Kong at 2, India"	1
 Indonesia"	1
 Ireland"	1
 Israel"	1
