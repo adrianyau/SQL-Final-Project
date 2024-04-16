@@ -308,6 +308,7 @@ SQL Queries:
 
 ```sql
 /* The top selling product from each city was determined by joining the product name and city based on the number of orders.  The product with the most number of order was ranked and filtered out by cities. */
+
 WITH top_selling_products_by_city AS (
 
 WITH number_of_orders AS (
@@ -334,6 +335,7 @@ WHERE rank = 1
 
 
 /* The top selling product from each country was determined by joining the product name and country based on the number of orders.  The product with the most number of order was ranked and filtered out by countries. */
+
 WITH top_selling_products_by_country AS (
 
 WITH number_of_orders AS (
@@ -449,6 +451,8 @@ I find that it is difficult to find a pattern in the products sold because there
 SQL Queries:
 
 ```sql
+/* Revenue was linked with the visit ID, for which it was joined to figure out the revenue by city. */
+
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
 	FROM analytics
@@ -462,6 +466,7 @@ WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset'
 GROUP BY als.city
 ORDER BY sum_revenue DESC
 
+/* Revenue was linked with the visit ID, for which it was joined to figure out the revenue by country. */
 
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
