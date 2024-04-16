@@ -110,7 +110,6 @@ WITH city_sum_of_orders AS (
 SELECT 
 	als.city, 
 	als.v2_product_category,
-	cso.sum_of_orders,
 	RANK () OVER (PARTITION BY als.city ORDER BY cso.sum_of_orders DESC) AS rank
 FROM all_sessions als
 JOIN city_sum_of_orders cso
@@ -119,8 +118,8 @@ WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset' AN
 GROUP BY als.city, als.v2_product_category, cso.sum_of_orders
 )
 
-SELECT *
-FROM top_product_categories_by_city
+SELECT ts.city, ts.v2_product_category
+FROM top_product_categories_by_city ts
 WHERE rank = 1
 
 /* The product categories were ranked and partitioned by each country to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each country. */
@@ -144,8 +143,8 @@ WHERE als.country != '(not set)' AND als.v2_product_category != '(not set)' AND 
 GROUP BY als.country, als.v2_product_category, cso.sum_of_orders
 )
 
-SELECT *
-FROM top_product_categories_by_country
+SELECT ts.country, ts.v2_product_category
+FROM top_product_categories_by_country ts
 WHERE rank = 1
 ```
 
@@ -215,7 +214,7 @@ WHERE rank = 1
 
 Answer:
 
-
+I find that it is difficult to find a pattern in the products sold because there is missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results for the top product in their respective cities and countries.
 
 
 
