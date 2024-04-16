@@ -392,7 +392,7 @@ Zurich at 16,990,000.
 Here is the summary of the revenue impact generated from each country:
 
 United States at 115,229,279,900, 
-Canada at 48,767,0000, 
+Canada at 487,670,000, 
 Germany at 69,980,000, 
 Japan at 30,880,000, and 
 Switzerland at 16,990,000.
