@@ -345,7 +345,7 @@ ORDER BY sum_revenue DESC
 
 
 WITH revenue AS (
-	SELECT DISTINCT full_visitor_id, revenue / 1000000 AS revenue, units_sold, unit_price
+	SELECT DISTINCT full_visitor_id, revenue / 1000000 AS revenue
 	FROM analytics
 	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
 )
