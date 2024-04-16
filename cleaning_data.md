@@ -101,6 +101,17 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
     ```
 
+11. The times are shown in numerical format, so the data was convered to Hour:Minute:Second format as follows:
+
+    ```sql
+    SELECT CAST(TO_TIMESTAMP(time) AS time)
+    FROM all_sessions
+
+    SELECT CAST(TO_TIMESTAMP(time_on_site) AS time_on_site)
+    ROM all_sessions
+    WHERE time_on_site IS NOT NULL
+    ```
+
     
 
    
