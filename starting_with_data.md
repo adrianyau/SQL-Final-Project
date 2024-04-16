@@ -28,7 +28,7 @@ GROUP BY v2_product_category
 
 Answer: 
 
-There are 104 items under Men's Performance Wear and there are 48 items under Women's Performance Wear.
+There are 14 items under Men's Performance Wear and there are 13 items under Women's Performance Wear.
 
 Question 2: 
 
