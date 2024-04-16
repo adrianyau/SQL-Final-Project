@@ -331,7 +331,7 @@ DRAFT:
 
 ```sql
 WITH revenue AS (
-	SELECT DISTINCT full_visitor_id, revenue, units_sold, unit_price
+	SELECT DISTINCT full_visitor_id, revenue / 1000000, units_sold, unit_price
 	FROM analytics
 	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
 )
@@ -345,7 +345,7 @@ ORDER BY sum_revenue DESC
 
 
 WITH revenue AS (
-	SELECT DISTINCT full_visitor_id, revenue, units_sold, unit_price
+	SELECT DISTINCT full_visitor_id, revenue / 1000000 AS revenue, units_sold, unit_price
 	FROM analytics
 	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
 )
