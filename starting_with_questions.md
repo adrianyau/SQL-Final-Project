@@ -89,7 +89,7 @@ Bangkok: 1,
 Berlin:	1, 
 Bogota:	1, 
 Chicago: 6, 
-Dallas, 1 
+Dallas: 1 
 Detroit: 1, 
 Dublin"	1
 Hong Kong: 1,  
