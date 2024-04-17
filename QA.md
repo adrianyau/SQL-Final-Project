@@ -5,7 +5,7 @@ What are your risk areas? Identify and describe them.
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
 
-1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.
+1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.  In addition, there could be the same product SKU for the same product, but named differently.
 
 ```sql
 SELECT p.sku, als.product_sku, p.name, als.v2_product_name, als.v2_product_category
