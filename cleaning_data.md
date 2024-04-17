@@ -6,7 +6,7 @@ Below, provide the SQL queries you used to clean your data.
 
 
 
-1. As per cleaning hint in the 'cleaning_data.md' file, the unit cost needs to be divided by 1,000,000.  Also, given that revenue is derived from the unit cost multiply by number of units sold, it will need to be converted from the millions. Therefore:
+1. As per cleaning hint in the 'cleaning_data.md' file, the unit cost needs to be divided by 1,000,000.  Also, given that revenue is derived from the unit cost multiply by number of units sold, it will need to be converted from the millions as well. Therefore:
    
    ```sql
    SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
