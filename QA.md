@@ -100,7 +100,7 @@ FROM analytics
    WHERE v2_product_category = '${escCatTitle}' OR v2_product_category = '(not set)'
    GROUP BY v2_product_category
    ```
-   |v2_product_category|
+|v2_product_category|
 |-------------------|
 |(not set)          |
 |${escCatTitle}     |
