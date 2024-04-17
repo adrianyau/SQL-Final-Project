@@ -62,18 +62,18 @@ Answer:
 
 These are the Top-10 Accessory Items according to its product price in USD:
 
-|v2_product_name|concat|rank|
-|---------------|------|----|
-|Google Phone Sanitizer|97 USD|1   |
-|Google Phone Sanitizer|78 USD|2   |
-|UpCycled Handlebar Bag|59 USD|3   |
-|Google Four Color EDC Flashlight|59 USD|3   |
-|Google Flashlight|59 USD|3   |
-|UpCycled Bike Saddle Bag|49 USD|6   |
-|Google Flashlight|47 USD|7   |
-|26 oz Double Wall Insulated Bottle|24 USD|8   |
-|20 oz Stainless Steel Insulated Tumbler|24 USD|8   |
-|Android 24 oz Contigo Bottle|23 USD|10  |
+|v2_product_name|price_in_usd|rank|
+|---------------|------------|----|
+|Google Phone Sanitizer|97 USD      |1   |
+|Google Phone Sanitizer|78 USD      |2   |
+|UpCycled Handlebar Bag|59 USD      |3   |
+|Google Four Color EDC Flashlight|59 USD      |3   |
+|Google Flashlight|59 USD      |3   |
+|UpCycled Bike Saddle Bag|49 USD      |6   |
+|Google Flashlight|47 USD      |7   |
+|26 oz Double Wall Insulated Bottle|24 USD      |8   |
+|20 oz Stainless Steel Insulated Tumbler|24 USD      |8   |
+|Android 24 oz Contigo Bottle|23 USD      |10  |
 
 
 
