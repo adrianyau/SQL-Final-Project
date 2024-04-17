@@ -1,7 +1,7 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-The project was to showcase our SQL fundamentals and knowledge of SQL queries, and apply to the dataset provided from an e-commerce company.  The goal was to work on the original raw data despite being inaccurate, inconsistent, duplicated, and missed.  Methods were shown that we could clean, transform, and analyze data, as well as identify risk areas for quality assurance, and ultimately, get desired outcomes.  
+The project was to showcase our SQL fundamentals and knowledge of SQL queries, and apply to the dataset provided from an e-commerce company.  The goal was to work on the original raw data despite being inaccurate, inconsistent, duplicated, and missed.  Methods were demonstrated via. pgAdmin 4 that we could clean, transform, and analyze data, as well as identify risk areas for quality assurance, and ultimately, get desired outcomes.  
 
 ## Process
 1. Five (5) CSV files were downloaded and imported into pgAdmin 4.  For the sake of simplicity with datatypes and time to upload the CSV files, 'VARCHAR' and 'INTEGER', whether 'INT' or 'BIG INT' depending on the length of numbers, were applied.  Names labeled in the 'Tables' and 'Columns' were case-sensitive and space-sensitive, so the names were typed in lower capitals, and words were separate replacing undescores '_' over spaces.
