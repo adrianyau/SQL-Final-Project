@@ -92,13 +92,20 @@ FROM analytics
 /* Total rows: 1,739,308 */
 ```
 
-4. There are some products that cannot be categorized or they are too vague to be described that can put in multiple categories, so they were filtered out.
+4. There are some products that cannot be set or categorized.  The WHERE() clause should filter out the uncategorized products.
 
    ```sql
    SELECT v2_product_category
    FROM all_sessions
-   WHERE v2_product_category != '${escCatTitle}' AND v2_product_category != '(not set)'
+   WHERE v2_product_category = '${escCatTitle}' OR v2_product_category = '(not set)'
+   GROUP BY v2_product_category
    ```
+   |v2_product_category|
+|-------------------|
+|(not set)          |
+|${escCatTitle}     |
+
+
 
 5. Under 'product_quantity', 'product_price, and 'product_revenue', the calculation of the product revenue ('product_quantity' * 'product_price) does not equal to the 'product_revenue' on the 'all_sessions' table.
 
