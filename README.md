@@ -17,10 +17,10 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 6. As for quality assurance, I felt that it was second nature while working with SQL queries as we checked and filtered data, such as finding null values and duplicate values, as well as filtering a specific set of data or answers or filtering out irrelevant information that was not important for the task at hand.
 
 ## Results
-- Duplication was evident in the database, whether if it was product duplication, webpage duplication, or both.
-- With products, there could be the same identical items, but they differ in minor details, such as sizing, colour, and other features.
+- Duplication was evident in the database.
+- With products, there could be the same identical items, but they differ in minor details, such as sizing, colour, and other features.  The product categorization is either not set, too generalized, or not specific enough to distinguish.
 - With webpages, users could be navigating throughout pages or links, whether it was double-clicking, multi-clicking, clicking by error, or clicking back-and-forth.
-- Some product SKUs were shown throughout the dataset that might not exist suggesting the products were discontinued or non-existent.
+- Some product SKUs in the dataset might be discontinued or non-existent.
 - Results to the questions provided could be skewed as there were still incomplete information, particularily the cities and countries of the customers.
 - This SQL Final Project seemed to be an example of an old adage "Garbage In - Garbage Out".
 
