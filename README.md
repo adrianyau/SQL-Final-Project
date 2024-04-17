@@ -14,23 +14,24 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 
 5. As for my own three (3) data questions, I wanted to showcase other SQL skills learned from the Data Analytics Bootcamp from the last two weeks, as well as applying some business accumen working on this datset from a fictional e-Commerce company.  For example, I wanted to compare the amount of different products (e.g., performance wear) between men and women, plus I applied the UNION operator to segement category list and tally the total product count to see any disparity on sportswear between genders.  Another example is taking a step further with the 'Rank Window' function ranking the 'Top-10 Accessories' list and include the type of currency along with the product price in the same cell.  My last example is learning about sentiment scores and how I could use the SQL query to find out about a specific product and the buyers' emotional response toward their product purchase.
 
-6. As for quality assurance, ???
+6. As for quality assurance, I felt that it was second nature while working with SQL queries as we checked and filtered data, such as finding null values and duplicate values, as well as filtering a specific set of data or answers or filtering out irrelevant information that was not important for the task at hand.
 
 ## Results
-- Duplication was evident in the database, whether if there was product duplication or webpage duplication.
-- With products could have the same identical item, but differ in minor details, such as sizing and colour.
-- With webpages, users could be clicking on a page or link whether it was double-clicking, multi-clicking, clicking by error, or clicking back-and-forth.
-- Some product SKUs were shown throughout the dataset, but they did not exist suggesting the products were discontinued or non-existent.
+- Duplication was evident in the database, whether if it was product duplication, webpage duplication, or both.
+- With products, there could be the same identical items, but they differ in minor details, such as sizing, colour, and other features.
+- With webpages, users could be navigating throughout pages or links, whether it was double-clicking, multi-clicking, clicking by error, or clicking back-and-forth.
+- Some product SKUs were shown throughout the dataset that might not exist suggesting the products were discontinued or non-existent.
 - Results to the questions provided could be skewed as there were still incomplete information, particularily the cities and countries of the customers.
+- This SQL Final Project seemed to be an example of an old adage "Garbage In - Garbage Out".
 
 ## Challenges 
 - Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
 - Ambiguity of questions being asked to answer as it depends on our individual responses and the validity of our reasoning to the audience.
-- Putting the lectures and modules learned daily from the Bootcamp to use to simulate real-life practice, especially tackling on an enormous dataset.
+- Putting the lectures and modules learned daily to use from the Bootcamp to simulate real-life practices that could potentially involve in tackling on an enormous dataset.
 - Getting used to reading the error messages flagged by pgAdmin 4 and understand what they mean.
 - Figuring out how to input SQL code in proper sequence to get the data output.  With long lists of code, it can be difficult to pin down data entry mistakes and typos.
 
 ## Future Goals
 - Better use of time and efficiencies to gather, sort, and obtain the results under time constraint.
 - Learn intermidate and advanced SQL functions to apply different combinations of code to achieve various desired outcomes and better code readability.
-- Not only do I like expand and sharpen my understanding of the SQL language, but I would like to gain insight of the data from a business perspective.  For the SQL Final Project in particular, I would have liked to know how an e-commerce operates and understand what sort of information is important and relevant to their stakeholders.
+- Not only do I like to expand and sharpen my understanding of the SQL language, but I would like to gain insight of the data from a business perspective.  For the SQL Final Project in particular, I would have liked to know how an e-commerce operates and understand what sort of information is important and relevant to their stakeholders.
