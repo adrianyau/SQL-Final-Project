@@ -17,10 +17,16 @@ The project was to showcase our SQL fundamentals and knowledge of SQL queries, a
 6. As for quality assurance, I felt that it was second nature while working with SQL queries as data was checked and filtered to its intent, such as filtering out null values and duplicate values; filtering out specific set of data for answers; or filtering out irrelevant information that was not important for the task at hand.
 
 ## Results
-- Duplication was evident in the database because of similar products within web pages.  From researching online, I learned about the term 'Keyword Cannibalization', which means when there are two or more pages on the website that targets similar keywords from the same search, such as 'White T-Shirts' and 'White Tees'.  The SEO, or search engine optimization, would struggle to determine between webpages, so it would not deliver the results to the users.  Hence, the products from the ecommerce would not appear in the top search results, which would lead to loss of customers and revenue.  Furthermore, product names need to be explicit with their descriptions, such as manufacturer's branding, because seeking similar product descriptions across different search engines would likely to prioritize a webpage with more brand recogniztion.  To note, this might me relevant where there were different product naming conventions under the table columns between 'v2_product_name' versus 'name' of the dataset.
-- There were missing Product SKUs, which did not correspond with the e-commerce sales of certain products.  It could lead to inaccurate information on how to track product information and which products are being sold more successfully than others. 
-- Results to the questions provided could be skewed as there were still incomplete information, particularily the cities and countries of the customers.
-- This SQL Final Project seemed to be an example of an old adage "Garbage In - Garbage Out".
+This SQL Final Project proved the old adage of "Garbage In - Garbage Out".  In summary, I felt that the SQL Final Project had stressed the importance of quality data, in the context of e-commerce, to make key business decisions to increase sales, improve operations, and stand out against the competition.  I had outlined three (3) attributes:
+
+1. Duplication of Data
+It was evident in the database because of similar products within web pages.  From researching online, I learned about the term    'Keyword Cannibalization', which means when there are two or more pages on the website that targets similar keywords from the same search, such as 'White T-Shirts' and 'White Tees'.  The SEO, or search engine optimization, would struggle to determine between webpages, so it would not deliver the results to the users.  Hence, the products from the ecommerce would not appear in the top search results, which would lead to loss of customers and revenue.  Furthermore, product names need to be explicit with their descriptions, such as manufacturer's branding, because seeking similar product descriptions across different search engines would likely to prioritize a webpage with more brand recogniztion.  To note, this might me relevant where there were different product naming conventions under the table columns between 'v2_product_name' versus 'name' of the dataset.
+
+2. Incomplete or Missing Data
+There were missing Product SKUs, which did not correspond with the e-commerce sales of certain products.  It could lead to inaccurate information on how to track product information and which products are being sold more successfully than others. Some cities and countries were not provided in the data set, which could skew results searching for sales information by geography.
+
+3. Inconsistent Data
+Specifically, dataset was provided for product price, product quantity, and product revenue, but the calculations for product revenue derived from multiplying product price by product quantity did not match with the product revenue provided.  Further investigation would be needed to validate the data provided.
 
 ## Challenges 
 - Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
