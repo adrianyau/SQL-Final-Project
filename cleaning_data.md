@@ -212,13 +212,13 @@ After:
 5.  The time is shown in numerical format, so the data was converted to 'Hour:Minute:Second' format as follows:
 
 ```sql
-SELECT CAST(TO_TIMESTAMP(time) AS time)
+SELECT CAST(TO_TIMESTAMP(time) AS time) AS time
 FROM all_sessions
 ```
 
 Before:
 
-|to_timestamp|
+|time|
 |------------|
 |01:56:53    |
 |18:42:27    |
@@ -228,7 +228,7 @@ Before:
 
 After:
 
-|to_timestamp|
+|time|
 |------------|
 |01:56:53    |
 |18:42:27    |
