@@ -551,6 +551,8 @@ SELECT als.city, SUM(r.revenue) AS sum_revenue, SUM(r.calc_revenue) AS sum_calc_
 FROM all_sessions als
 JOIN revenue r
 	ON als.visit_id = r.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset'
 GROUP BY als.city
 ORDER BY sum_revenue DESC
@@ -566,6 +568,8 @@ SELECT als.country, SUM(r.revenue) AS sum_revenue, SUM(r.calc_revenue) AS sum_ca
 FROM all_sessions als
 JOIN revenue r
 	ON als.visit_id = r.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.country != '(not set)'
 GROUP BY als.country
 ORDER BY sum_revenue DESC
