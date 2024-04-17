@@ -12,6 +12,18 @@ Below, provide the SQL queries you used to clean your data.
 SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
 FROM analytics
 ```
+Before:
+
+|unit_price|
+|----------|
+|249000000 |
+|249000000 |
+|249000000 |
+|199000000 |
+|199000000 |
+
+After:
+
 |unit_price|
 |----------|
 |249       |
@@ -24,6 +36,8 @@ FROM analytics
 SELECT CAST(product_price AS REAL) / 1000000 AS product_price
 FROM all_sessions
 ```
+Before:
+
 |product_price|
 |-------------|
 |2.99         |
@@ -32,12 +46,33 @@ FROM all_sessions
 |76.99        |
 |109.99       |
 
+After:
+
+|product_price|
+|-------------|
+|2990000      |
+|98990000     |
+|24990000     |
+|76990000     |
+|109990000    |
+
 ```sql
 SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
 transaction_revenue / 1000000 AS transaction_revenue
 FROM all_sessions
 WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL
 ```
+Before:
+
+|total_transaction_revenue|product_revenue|transaction_revenue|
+|-------------------------|---------------|-------------------|
+|200000000                |120000000      |200000000          |
+|169970000                |58656666       |169970000          |
+|1015480000               |176400000      |1015480000         |
+|1005500000               |60365000       |1005500000         |
+
+After:
+
 |total_transaction_revenue|product_revenue|transaction_revenue|
 |-------------------------|---------------|-------------------|
 |200                      |120            |200                |
