@@ -108,7 +108,6 @@ After:
 |2017-07-05|
 |2017-07-05|
 |2017-07-05|
-```
 
 ```sql
 SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
@@ -133,7 +132,6 @@ After:
 |2017-03-12|
 |2017-02-15|
 |2016-12-18|
-```
 
 
 
