@@ -511,5 +511,59 @@ Here is the summary of the revenue impact generated from each country:
 |Israel        |32         |
 |Switzerland   |16         |
 
+While it was easier to draw the 'revenue' data from the 'analytics' table, there is information on the 'unit_sold' and 'unit_price' to calculate the revenue.  To see the difference:
+
+```sql
+/* Comparision between 'revenue' column versus calculated revenue by 'units_sold' * 'unit_price' by city. */
+WITH revenue AS (
+	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue, CAST((units_sold * unit_price) / 1000000 AS INTEGER) AS calc_revenue
+	FROM analytics
+	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
+)
+SELECT als.city, SUM(r.revenue) AS sum_revenue, SUM(r.calc_revenue) AS sum_calc_revenue, (SUM(r.calc_revenue) - SUM(r.revenue)) / SUM(r.revenue) * 100 AS revenue_diff_pct
+FROM all_sessions als
+JOIN revenue r
+	ON als.visit_id = r.visit_id
+WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset'
+GROUP BY als.city
+ORDER BY sum_revenue DESC
+
+/* Comparision between 'revenue' column versus calculated revenue by 'units_sold' * 'unit_price' by country. */
+
+WITH revenue AS (
+	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue, CAST((units_sold * unit_price) / 1000000 AS INTEGER) AS calc_revenue
+	FROM analytics
+	WHERE units_sold IS NOT NULL AND revenue IS NOT NULL
+)
+SELECT als.country, SUM(r.revenue) AS sum_revenue, SUM(r.calc_revenue) AS sum_calc_revenue, (SUM(r.calc_revenue) - SUM(r.revenue)) / SUM(r.revenue) * 100 AS revenue_diff_pct
+FROM all_sessions als
+JOIN revenue r
+	ON als.visit_id = r.visit_id
+WHERE als.country != '(not set)'
+GROUP BY als.country
+ORDER BY sum_revenue DESC
+```
+
+Here is the revenue compared to the calculated revenue by units sold * unit price for each city:
+
+|city         |sum_revenue|sum_calc_revenue|revenue_diff_pct        |
+|-------------|-----------|----------------|------------------------|
+|New York     |1103       |1101            |-0.18132366273798730700 |
+|Sunnyvale    |608        |602             |-0.98684210526315789500 |
+|Mountain View|481        |467             |-2.91060291060291060300 |
+|Seattle      |357        |357             |0.00000000000000000000  |
+|Chicago      |306        |298             |-2.61437908496732026100 |
+|San Francisco|276        |261             |-5.43478260869565217400 |
+|San Jose     |153        |149             |-2.61437908496732026100 |
+|Palo Alto    |151        |149             |-1.32450331125827814600 |
+|Tel Aviv-Yafo|32         |24              |-25.00000000000000000000|
+|Zurich       |16         |14              |-12.50000000000000000000|
 
 
+Here is the revenue compared to the calculated revenue by units sold * unit price for each country:
+
+|country      |sum_revenue|sum_calc_revenue|revenue_diff_pct        |
+|-------------|-----------|----------------|------------------------|
+|United States|4629       |4558            |-1.53380859796932382800 |
+|Israel       |32         |24              |-25.00000000000000000000|
+|Switzerland  |16         |14              |-12.50000000000000000000|
