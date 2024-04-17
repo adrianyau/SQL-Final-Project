@@ -45,17 +45,40 @@ It appears that searching the product in the 'all_sessions' table as per page ti
 
 
 
-2. Some information on cities and countries or not set nor available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.  For example, a country could have different cities, and cities could have the same names in different countries (e.g., Vancouver, BC, CAN, and Vancouver, WA, USA).
+2. Some information on cities and countries or not set nor available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.  For example, a country could have different cities, and cities could have the same names in different countries (e.g., Vancouver, BC, CAN, and Vancouver, WA, USA).  Therefore, WHERE() clause was used to filter out missing city and country information.
 
 ``` sql
-SELECT city
+SELECT city, country
 FROM all_sessions
-WHERE city != '(not set)' AND city != 'not available in demo dataset'
-
-SELECT country
-FROM all_sessions
-WHERE country != '(not set)'
+WHERE city != '(not set)' OR city != 'not available in demo dataset' OR country != '(not set)'
+LIMIT 5
 ```
+|city|country |
+|----|--------|
+|(not set)|Taiwan  |
+|not available in demo dataset|United States|
+|not available in demo dataset|United States|
+|not available in demo dataset|United States|
+|London|United States|
+
+Therefore, WHERE() clause was used to filter out missing city and country information.
+```sql
+SELECT city, country
+FROM all_sessions
+WHERE city != '(not set)' AND city != 'not available in demo dataset' AND country != '(not set)'
+LIMIT 5
+```
+|city|country |
+|----|--------|
+|London|United States|
+|Sydney|Australia|
+|Philadelphia|United States|
+|Sunnyvale|United States|
+|Mountain View|United States|
+
+However, it would be helpful if we have additional information on the geographical locations, such as 'provinces', 'states', and 'districts' to narrow down the details (e.g., is there a city called London in the United States, or is it London, England, UK?)
+
+
 
 3. In the 'analytics' table where it tracks website information data, there was a ton of redudant data.  To remove such duplications, the DISTINCT() function was used:
 
