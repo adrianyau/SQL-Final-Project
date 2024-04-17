@@ -475,7 +475,7 @@ Similar to Question 3 in the 'starting_with_questions.md' file, I would think th
 SQL Queries:
 
 ```sql
-/* Revenue was linked with the visit ID, for which it was joined to calculate the revenue by city. */
+/* Revenue was linked with the visit ID, for which it was joined to verify purchases to calculate the revenue by city. */
 
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
@@ -486,11 +486,13 @@ SELECT als.city, SUM(r.revenue) AS sum_revenue
 FROM all_sessions als
 JOIN revenue r
 	ON als.visit_id = r.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset'
 GROUP BY als.city
 ORDER BY sum_revenue DESC
 
-/* Revenue was linked with the visit ID, for which it was joined to calculate the revenue by country. */
+/* Revenue was linked with the visit ID, for which it was joined to verify purchases to calculate the revenue by country. */
 
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
@@ -501,6 +503,8 @@ SELECT als.country, SUM(r.revenue) AS sum_revenue
 FROM all_sessions als
 JOIN revenue r
 	ON als.visit_id = r.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.country != '(not set)'
 GROUP BY als.country
 ORDER BY sum_revenue DESC
