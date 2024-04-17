@@ -168,7 +168,7 @@ These are the following countires with the average number of products as follows
 SQL Queries:
 
 ```sql
-/* The product categories were ranked and partitioned by each city to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each city. */
+/* The product categories were ranked and partitioned by each city to see product categories by highest number of orders.  Once estabished the SQL code, it was nested with another CTE function to filter out the top product category for each city. */
 
 WITH top_product_categories_by_city AS (
 
@@ -193,7 +193,8 @@ SELECT ts.city, ts.v2_product_category
 FROM top_product_categories_by_city ts
 WHERE rank = 1
 
-/* The product categories were ranked and partitioned by each country to see its product categories by most number of orders.  The SQL code was nested with another CTE function to filter out the top product category in each country. */
+/* The product categories were ranked and partitioned by each city to see product categories by highest number of orders.  Once estabished the SQL code, it was nested with another CTE function to filter out the top product category for each country. */
+
 WITH top_product_categories_by_country AS (
 
 WITH country_sum_of_orders AS (
@@ -298,7 +299,7 @@ The top category for each country is as follows:
 
 
 
-I find that it is difficult to find a pattern in the product categories because there is still missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results for the product categories in their respective cities and countries.
+I find that it was difficult to find a pattern in the product categories because there was still missing information from cities, countries, or both.  I would think that the product category can change between cities and countries should the missing information be received.
 
 
 
@@ -366,7 +367,7 @@ WHERE rank = 1
 
 Answer:
 
-This is the top-selling product from each city:
+These are the top-selling products for each city:
 
 |city          |v2_product_category|
 |--------------|-------------------|
@@ -405,7 +406,7 @@ This is the top-selling product from each city:
 |Zurich        |Home/Apparel/Men's/Men's-T-Shirts/|
 
 
-This is the top selling product from each country:
+These are the top-selling products for each country:
 
 |country       |v2_product_category|
 |--------------|-------------------|
@@ -443,7 +444,7 @@ This is the top selling product from each country:
 
 
 
-I find that it is difficult to find a pattern in the products sold because there is missing information from cities, countries, and both, but there were orders applied.  Had this missing information be available in the dataset, I think it would affect the results on what would be the top product in their respective cities and countries.
+Similar to Question 3 in the 'starting_with_questions.md' file, I would think that the missing information could alter the top-selling products between cities and countries.
 
 
 
@@ -452,7 +453,7 @@ I find that it is difficult to find a pattern in the products sold because there
 SQL Queries:
 
 ```sql
-/* Revenue was linked with the visit ID, for which it was joined to figure out the revenue by city. */
+/* Revenue was linked with the visit ID, for which it was joined to calculate the revenue by city. */
 
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
@@ -467,7 +468,7 @@ WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset'
 GROUP BY als.city
 ORDER BY sum_revenue DESC
 
-/* Revenue was linked with the visit ID, for which it was joined to figure out the revenue by country. */
+/* Revenue was linked with the visit ID, for which it was joined to calculate the revenue by country. */
 
 WITH revenue AS (
 	SELECT DISTINCT visit_id, revenue / 1000000 AS revenue
@@ -544,7 +545,7 @@ GROUP BY als.country
 ORDER BY sum_revenue DESC
 ```
 
-Here is the revenue compared to the calculated revenue by units sold * unit price for each city:
+Here is the revenue compared to the calculated revenue by (units sold * unit price) for each city:
 
 |city         |sum_revenue|sum_calc_revenue|revenue_diff_pct        |
 |-------------|-----------|----------------|------------------------|
@@ -560,7 +561,7 @@ Here is the revenue compared to the calculated revenue by units sold * unit pric
 |Zurich       |16         |14              |-12.50000000000000000000|
 
 
-Here is the revenue compared to the calculated revenue by units sold * unit price for each country:
+Here is the revenue compared to the calculated revenue by (units sold * unit price) for each country:
 
 |country      |sum_revenue|sum_calc_revenue|revenue_diff_pct        |
 |-------------|-----------|----------------|------------------------|
