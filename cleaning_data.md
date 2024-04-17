@@ -12,15 +12,6 @@ Below, provide the SQL queries you used to clean your data.
    SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
    FROM analytics
 
-   SELECT CAST(product_price AS REAL) / 1000000 AS product_price
-   FROM all_sessions
-
-   SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
-   transaction_revenue / 1000000 AS transaction_revenue
-   FROM all_sessions
-   WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL 
-   ```
-
 |unit_price|
 |----------|
 |249       |
@@ -28,6 +19,10 @@ Below, provide the SQL queries you used to clean your data.
 |249       |
 |199       |
 |199       |
+
+
+   SELECT CAST(product_price AS REAL) / 1000000 AS product_price
+   FROM all_sessions
 
 |product_price|
 |-------------|
@@ -37,12 +32,18 @@ Below, provide the SQL queries you used to clean your data.
 |76.99        |
 |109.99       |
 
+   SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
+   transaction_revenue / 1000000 AS transaction_revenue
+   FROM all_sessions
+   WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL
+
 |total_transaction_revenue|product_revenue|transaction_revenue|
 |-------------------------|---------------|-------------------|
 |200                      |120            |200                |
 |169                      |58             |169                |
 |1015                     |176            |1015               |
 |1005                     |60             |1005               |
+```
 
 
 
@@ -52,8 +53,24 @@ Below, provide the SQL queries you used to clean your data.
    SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
    FROM analytics
 
+|date|
+|----|
+|2017-07-05|
+|2017-07-05|
+|2017-07-05|
+|2017-07-05|
+|2017-07-05|
+
    SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
    FROM all_sessions
+
+|date|
+|----|
+|2016-09-13|
+|2017-04-21|
+|2017-03-12|
+|2017-02-15|
+|2016-12-18|
    ```
 
 3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove excess spaces whether leading, trailing, and in between text, it will be as follows:
