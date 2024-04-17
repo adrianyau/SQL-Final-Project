@@ -30,17 +30,19 @@ LIMIT 10
 |NULL|9180797         |Google 22 oz Water Bottle          |(not set)          |
 |NULL|9180801         |Engraved Ceramic Google Mug        |(not set)          |
 
+Take product SKU 9180751 "Android 24 oz Contigo Bottle" as an example.
 ```sql
-/* Take product SKU 9180751 "Android 24 oz Contigo Bottle" as an example. */
 SELECT product_sku, v2_product_name, v2_product_category, page_title
 FROM all_sessions
 WHERE product_sku ='9180751'
-/* It appears that searching the product as per page title does not correlate with the product. */
 ```
+It appears that searching the product as per page title does not correlate with the product.
+```sql
 |product_sku|v2_product_name|v2_product_category                |page_title|
 |-----------|---------------|-----------------------------------|----------|
 |9180751    |Android 24 oz Contigo Bottle|(not set)                          |Google Laptop and Cell Phone Stickers|
 |9180751    |Android 24 oz Contigo Bottle|(not set)                          |Android Baby Essentials Baby Set|
+```
 
 
 
