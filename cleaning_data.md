@@ -53,7 +53,7 @@ WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL 
 ```sql
 SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
 FROM analytics
-
+```
 |date|
 |----|
 |2017-07-05|
@@ -62,9 +62,9 @@ FROM analytics
 |2017-07-05|
 |2017-07-05|
 
-   SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
-   FROM all_sessions
-
+SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
+FROM all_sessions
+```
 |date|
 |----|
 |2016-09-13|
