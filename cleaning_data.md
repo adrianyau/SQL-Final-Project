@@ -149,6 +149,7 @@ Before:
 | .    Men's Short Sleeve Hero Tee Charcoal|
 |22 oz  Bottle Infuser|
 |Android 17oz Stainless Steel Sport Bottle|
+
 ***markdown cannot pick up the lead space, so the period '.' is a representation of the spacing
 
 After:
