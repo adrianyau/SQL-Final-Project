@@ -11,7 +11,7 @@ Below, provide the SQL queries you used to clean your data.
 ```sql
 SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
 FROM analytics
-
+```
 |unit_price|
 |----------|
 |249       |
@@ -20,10 +20,10 @@ FROM analytics
 |199       |
 |199       |
 
-
+```sql
 SELECT CAST(product_price AS REAL) / 1000000 AS product_price
 FROM all_sessions
-
+```
 |product_price|
 |-------------|
 |2.99         |
@@ -32,11 +32,12 @@ FROM all_sessions
 |76.99        |
 |109.99       |
 
+```sql
 SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
 transaction_revenue / 1000000 AS transaction_revenue
 FROM all_sessions
 WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL
-
+```
 |total_transaction_revenue|product_revenue|transaction_revenue|
 |-------------------------|---------------|-------------------|
 |200                      |120            |200                |
