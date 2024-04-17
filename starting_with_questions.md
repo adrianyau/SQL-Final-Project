@@ -51,114 +51,118 @@ These are the countries with the highest level of transaction revenues on the si
 SQL Queries:
 
 ```sql
-/* The units sold is presumed to have the amount of products sold in one order linked to the visit id, which in turn, is joined with the city information to calculate the average for each city. */
+/* The units sold is presumed to have the amount of products sold in one order linked to the visit id, which in turn, is joined with the product information and city information to calculate the average for each city. */
 
 WITH visitor_and_units_sold AS(
 	SELECT DISTINCT visit_id, units_sold
 	FROM analytics
 	WHERE units_sold IS NOT NULL
 )
-SELECT als.city, CAST(AVG(units_sold) AS INTEGER)
+SELECT als.city, CAST(AVG(units_sold) AS INTEGER) AS avg_num_of_products
 FROM all_sessions als
 JOIN visitor_and_units_sold vus
 	ON als.visit_id = vus.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.city != '(not set)' AND city != 'not available in demo dataset'
 GROUP BY als.city
 ORDER BY als.city
 
-/* The units sold is presumed to have the amount of products sold in one order linked to the visit id, which in turn, is joined with the country information to calculate the average for each country. */
+/* The units sold is presumed to have the amount of products sold in one order linked to the visit id, which in turn, is joined with the product information and country information to calculate the average for each city. */
 
 WITH visitor_and_units_sold AS(
 	SELECT DISTINCT visit_id, units_sold
 	FROM analytics
 	WHERE units_sold IS NOT NULL
 )
-SELECT als.country, CAST(AVG(units_sold) AS INTEGER)
+SELECT als.country, CAST(AVG(units_sold) AS INTEGER) AS avg_num_of_products
 FROM all_sessions als
 JOIN visitor_and_units_sold vus
 	ON als.visit_id = vus.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.country != '(not set)'
 GROUP BY als.country
 ORDER BY als.country
 ```
 
 
+
 Answer:
 
 These are the following cities with the average number of products as follows:
 
-|city          |avg_num_of_products|
-|--------------|-------------------|
-|Ann Arbor     |1                  |
-|Atlanta       |1                  |
-|Austin        |1                  |
-|Bangkok       |1                  |
-|Berlin        |1                  |
-|Bogota        |1                  |
-|Chicago       |6                  |
-|Dallas        |1                  |
-|Detroit       |1                  |
-|Dublin        |1                  |
-|Hong Kong     |1                  |
-|Houston       |3                  |
-|Hyderabad     |2                  |
-|Kirkland      |1                  |
-|London        |1                  |
-|Mountain View |3                  |
-|Munich        |1                  |
-|New York      |2                  |
-|Palo Alto     |1                  |
-|Paris         |1                  |
-|Pittsburgh    |4                  |
-|San Bruno     |1                  |
-|San Francisco |2                  |
-|San Jose      |1                  |
-|Santiago      |1                  |
-|Seattle       |1                  |
-|Singapore     |1                  |
-|Sunnyvale     |2                  |
-|Tel Aviv-Yafo |1                  |
-|Toronto       |3                  |
-|Washington    |1                  |
-|Zurich        |1                  |
+|city                                          |avg_num_of_products|
+|----------------------------------------------|-------------------|
+|Ann Arbor                                     |1                  |
+|Atlanta                                       |1                  |
+|Austin                                        |1                  |
+|Bangkok                                       |1                  |
+|Berlin                                        |1                  |
+|Bogota                                        |1                  |
+|Chicago                                       |6                  |
+|Dallas                                        |1                  |
+|Detroit                                       |1                  |
+|Dublin                                        |1                  |
+|Hong Kong                                     |1                  |
+|Houston                                       |3                  |
+|Hyderabad                                     |2                  |
+|Kirkland                                      |1                  |
+|London                                        |1                  |
+|Mountain View                                 |1                  |
+|Munich                                        |1                  |
+|New York                                      |2                  |
+|Palo Alto                                     |1                  |
+|Paris                                         |1                  |
+|Pittsburgh                                    |4                  |
+|San Francisco                                 |2                  |
+|San Jose                                      |1                  |
+|Santiago                                      |1                  |
+|Seattle                                       |1                  |
+|Singapore                                     |1                  |
+|Sunnyvale                                     |2                  |
+|Tel Aviv-Yafo                                 |1                  |
+|Toronto                                       |3                  |
+|Washington                                    |1                  |
+|Zurich                                        |1                  |
+
 
 
 
 These are the following countires with the average number of products as follows:
 
-|country       |avg_num_of_products|
-|--------------|---|
-|Australia     |1  |
-|Austria       |1  |
-|Belgium       |1  |
-|Bulgaria      |2  |
-|Canada        |3  |
-|Chile         |1  |
-|Colombia      |1  |
-|Denmark       |1  |
-|Egypt         |1  |
-|France        |1  |
-|Germany       |1  |
-|Hong Kong     |1  |
-|India         |1  |
-|Indonesia     |1  |
-|Ireland       |1  |
-|Israel        |1  |
-|Japan         |2  |
-|Maldives      |1  |
-|Mexico        |2  |
-|Netherlands   |1  |
-|Romania       |1  |
-|Singapore     |1  |
-|South Korea   |1  |
-|Sweden        |1  |
-|Switzerland   |1  |
-|Taiwan        |1  |
-|Thailand      |1  |
-|United Kingdom|1  |
-|United States |2  |
-|Vietnam       |1  |
-
+|country                                       |avg_num_of_products|
+|----------------------------------------------|-------------------|
+|Australia                                     |1                  |
+|Austria                                       |1                  |
+|Belgium                                       |1                  |
+|Bulgaria                                      |2                  |
+|Canada                                        |3                  |
+|Chile                                         |1                  |
+|Colombia                                      |1                  |
+|Denmark                                       |1                  |
+|Egypt                                         |1                  |
+|France                                        |1                  |
+|Germany                                       |1                  |
+|Hong Kong                                     |1                  |
+|India                                         |1                  |
+|Indonesia                                     |1                  |
+|Ireland                                       |1                  |
+|Israel                                        |1                  |
+|Japan                                         |2                  |
+|Maldives                                      |1                  |
+|Mexico                                        |2                  |
+|Netherlands                                   |1                  |
+|Romania                                       |1                  |
+|Singapore                                     |1                  |
+|South Korea                                   |1                  |
+|Sweden                                        |1                  |
+|Switzerland                                   |1                  |
+|Taiwan                                        |1                  |
+|Thailand                                      |1                  |
+|United Kingdom                                |1                  |
+|United States                                 |2                  |
+|Vietnam                                       |1                  |
 
 
 
