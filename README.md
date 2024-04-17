@@ -29,7 +29,7 @@ Specifically, dataset was provided for product price, product quantity, and prod
 
 ## Challenges 
 - Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
-- Ambiguity of questions being asked to answer as it depends on our individual responses and the validity of our reasoning to the audience.
+- Ambiguity of questions depends on our individual responses and the validity of our reasoning to the audience.
 - Putting the lectures and modules learned daily to use from the Bootcamp to simulate real-life practices that could potentially involve in tackling on an enormous dataset.
 - Getting used to reading the error messages flagged by pgAdmin 4 and understand what they mean.
 - Figuring out how to input SQL code in proper sequence to get the data output.  With long lists of code, it can be tedious to pin down data entry mistakes and typos.
