@@ -114,3 +114,10 @@ FROM analytics
    FROM all_sessions
    WHERE (product_quantity * product_price) != product_revenue
    ```
+|calc_product_revenue|product_revenue|
+|--------------------|---------------|
+|119                 |120            |
+|55                  |58             |
+|175                 |176            |
+|59                  |60             |
+
