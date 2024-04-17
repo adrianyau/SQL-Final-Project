@@ -49,9 +49,9 @@ WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL 
 
 2. The 'date' column importing the CSVs is not in the PostgreSQL date format.  The datatype uploaded is an 'INT', so it will need to be converted from 'INT' to 'VARCHAR' then 'DATE' as follows:
 
-   ```sql
-   SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
-   FROM analytics
+```sql
+SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
+FROM analytics
 
 |date|
 |----|
@@ -71,7 +71,7 @@ WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL 
 |2017-03-12|
 |2017-02-15|
 |2016-12-18|
- ```
+```
 
 
 
