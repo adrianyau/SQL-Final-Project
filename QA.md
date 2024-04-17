@@ -5,16 +5,15 @@ What are your risk areas? Identify and describe them.
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
 
-1. As the products' SKUs are identified as primary keys across the 'products', 'sales_report', and 'sales_by_sku' tables, these tables were joined to show that there were products that do not exist in the database or products could be mislabeled with an non-existent SKU.
+1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to confirm the existence of such products:
 
 ```sql
-SELECT p.sku, sr.product_sku, s.product_sku, p.name, sr.name
-FROM products p
-FULL OUTER JOIN sales_report sr
-	ON p.sku = sr.product_sku
-FULL OUTER JOIN sales_by_sku s
-	ON p.sku = s.product_sku
-WHERE p.sku IS NULL AND sr.product_sku IS NULL AND sr.product_sku IS NULL
+SELECT p.sku, als.product_sku, p.name, als.v2_product_name, als.v2_product_category
+FROM all_sessions als
+FULL OUTER JOIN products p
+	ON als.product_sku = p.sku
+WHERE p.sku IS NULL
+GROUP BY p.sku, als.product_sku, v2_product_name, v2_product_category
 ```
 
 2. Some information on cities and countries or not set or available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.
@@ -41,10 +40,18 @@ FROM analytics
 /* Total rows: 1,739,308 */
 ```
 
-4. There are some products that cannot be categorized, so NULL was applied to these data as follows:
+4. There are some products that cannot be categorized or they are too vague to be described that can fit in multiple categories, so they were filtered out.
 
    ```sql
    SELECT v2_product_category
    FROM all_sessions
    WHERE v2_product_category != '${escCatTitle}' AND v2_product_category != '(not set)'
+   ```
+
+5. Under 'product_quantity', 'product_price, and 'product_revenue', the calculation of the product revenue ('product_quantity' * 'product_price) does not match the 'product_revenue' on the 'all_sessions' table.
+
+   ```sql
+   SELECT (product_quantity * product_price / 1000000) AS calc_product_revenue, product_revenue / 1000000 AS product_revenue
+   FROM all_sessions
+   WHERE (product_quantity * product_price) != product_revenue
    ```
