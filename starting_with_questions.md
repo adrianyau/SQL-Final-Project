@@ -333,11 +333,13 @@ SELECT
 FROM all_sessions als
 JOIN number_of_orders noo
 	ON als.visit_id = noo.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE city != '(not set)' AND city != 'not available in demo dataset' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.city, als.v2_product_name, noo.top_sellers
 ORDER BY als.city
 )
-SELECT ts.city, ts.v2_product_name
+SELECT ts.city, ts.v2_product_name AS top_selling_product
 FROM top_selling_products_by_city ts
 WHERE rank = 1
 
@@ -360,11 +362,13 @@ SELECT
 FROM all_sessions als
 JOIN number_of_orders noo
 	ON als.visit_id = noo.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.country != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.country, als.v2_product_name, noo.top_sellers
 ORDER BY als.country
 )
-SELECT ts.country, ts.v2_product_name
+SELECT ts.country, ts.v2_product_name AS top_selling_product
 FROM top_selling_products_by_country ts
 WHERE rank = 1
 ```
@@ -375,78 +379,90 @@ Answer:
 
 These are the top-selling products for each city:
 
-|city          |v2_product_category|
-|--------------|-------------------|
-|Ann Arbor     |Home/Apparel/Men's/Men's-T-Shirts/|
-|Atlanta       |Home/Apparel/Men's/Men's-T-Shirts/|
-|Atlanta       |Home/Bags/         |
-|Austin        |Home/Apparel/Men's/Men's-Performance Wear/|
-|Austin        |Home/Office/Notebooks & Journals/|
-|Bangkok       |Home/Drinkware/    |
-|Berlin        |Home/Office/       |
-|Bogota        |Home/Apparel/Men's/Men's-T-Shirts/|
-|Chicago       |Home/Shop by Brand/|
-|Dallas        |Home/Shop by Brand/YouTube/|
-|Detroit       |Drinkware          |
-|Dublin        |Home/Bags/         |
-|Dublin        |Home/Shop by Brand/YouTube/|
-|Hong Kong     |Home/Apparel/Men's/Men's-T-Shirts/|
-|Hyderabad     |Home/Accessories/Stickers/|
-|Kirkland      |Home/Office/       |
-|London        |Home/Office/Notebooks & Journals/|
-|Mountain View |Home/Apparel/Men's/Men's-Outerwear/|
-|Munich        |Home/Apparel/Headgear/|
-|New York      |Home/Bags/Backpacks/|
-|Palo Alto     |Nest-USA           |
-|Paris         |Home/Shop by Brand/Android/|
-|Pittsburgh    |Home/Office/Notebooks & Journals/|
-|San Bruno     |Home/Bags/         |
-|San Francisco |Home/Apparel/Women's/Women's-T-Shirts/|
-|San Jose      |Home/Apparel/Men's/Men's-T-Shirts/|
-|Santiago      |Home/Bags/         |
-|Seattle       |Home/Nest/Nest-USA/|
-|Sunnyvale     |Housewares         |
-|Tel Aviv-Yafo |Home/Shop by Brand/YouTube/|
-|Toronto       |Home/Apparel/Headgear/|
-|Washington    |Home/Apparel/Kid's/Kid's-Infant/|
-|Zurich        |Home/Apparel/Men's/Men's-T-Shirts/|
+|city                                          |top_selling_product|
+|----------------------------------------------|-------------------|
+|Ann Arbor                                     |Google Men's Vintage Badge Tee Black|
+|Atlanta                                       |Android Men's Vintage Henley|
+|Atlanta                                       |Google Alpine Style Backpack|
+|Austin                                        |Google Men's Airflow 1/4 Zip Pullover Black|
+|Austin                                        |YouTube RFID Journal|
+|Bangkok                                       |26 oz Double Wall Insulated Bottle|
+|Berlin                                        |Google Doodle Decal|
+|Bogota                                        |YouTube Men's 3/4 Sleeve Henley|
+|Chicago                                       |Google Womens 3/4 Sleeve Baseball Raglan Heather/Black|
+|Dallas                                        |YouTube Leatherette Notebook Combo|
+|Detroit                                       |Google 22 oz Water Bottle|
+|Dublin                                        |Google Laptop Backpack|
+|Dublin                                        |YouTube RFID Journal|
+|Hong Kong                                     |Android Men's Long Sleeve Badge Crew Tee Heather|
+|Hyderabad                                     |Google Bongo Cupholder Bluetooth Speaker|
+|Hyderabad                                     |Keyboard DOT Sticker|
+|Kirkland                                      |Android Sticker Sheet Ultra Removable|
+|London                                        |Android Hard Cover Journal|
+|Mountain View                                 |Google Men's Airflow 1/4 Zip Pullover Black|
+|Munich                                        |Google Twill Cap   |
+|New York                                      |Google Alpine Style Backpack|
+|Palo Alto                                     |Nest® Learning Thermostat 3rd Gen-USA - White|
+|Paris                                         |Android Lunch Kit  |
+|Pittsburgh                                    |YouTube Hard Cover Journal|
+|San Francisco                                 |Google Women's Scoop Neck Tee White|
+|San Jose                                      |YouTube Men's Vintage Tank|
+|Santiago                                      |Sport Bag          |
+|Seattle                                       |Nest® Cam Indoor Security Camera - USA|
+|Singapore                                     |Google Men's Short Sleeve Performance Badge Tee Navy|
+|Sunnyvale                                     |SPF-15 Slim & Slender Lip Balm|
+|Tel Aviv-Yafo                                 |YouTube Hard Cover Journal|
+|Toronto                                       |Sport Bag          |
+|Washington                                    |Google Bib White   |
+|Zurich                                        |YouTube Men's 3/4 Sleeve Henley|
+
 
 
 These are the top-selling products for each country:
 
-|country       |v2_product_category|
-|--------------|-------------------|
-|Australia     |Home/Accessories/Stickers/|
-|Austria       |Home/Accessories/Housewares/|
-|Belgium       |Home/Drinkware/Water Bottles and Tumblers/|
-|Bulgaria      |Home/Apparel/Men's/Men's-T-Shirts/|
-|Canada        |Home/Apparel/Headgear/|
-|Chile         |Home/Bags/         |
-|Colombia      |Home/Apparel/Men's/Men's-T-Shirts/|
-|Denmark       |Home/Drinkware/    |
-|Egypt         |Home/Shop by Brand/Android/|
-|France        |Home/Shop by Brand/Android/|
-|France        |Headgear           |
-|Germany       |Home/Apparel/Headgear/|
-|Germany       |Home/Office/       |
-|Hong Kong     |Home/Nest/Nest-USA/|
-|India         |Home/Accessories/Stickers/|
-|Indonesia     |Home/Bags/Backpacks/|
-|Ireland       |Home/Shop by Brand/YouTube/|
-|Ireland       |Home/Bags/         |
-|Israel        |Home/Shop by Brand/YouTube/|
-|Japan         |Home/Accessories/  |
-|Maldives      |Home/Apparel/Men's/Men's-Outerwear/|
-|Mexico        |Home/Nest/Nest-USA/|
-|Netherlands   |Home/Apparel/Men's/Men's-T-Shirts/|
-|South Korea   |Home/Electronics/Electronics Accessories/|
-|Sweden        |Home/Electronics/  |
-|Switzerland   |Home/Apparel/Men's/Men's-T-Shirts/|
-|Taiwan        |Home/Apparel/Men's/Men's-Performance Wear/|
-|Thailand      |Home/Drinkware/    |
-|United Kingdom|Home/Office/Notebooks & Journals/|
-|United States |Housewares         |
-|Vietnam       |Home/Shop by Brand/YouTube/|
+|country                                       |top_selling_product|
+|----------------------------------------------|-------------------|
+|Australia                                     |Android Sticker Sheet Ultra Removable|
+|Austria                                       |Google Car Clip Phone Holder|
+|Belgium                                       |Google 17 oz Double Wall Stainless Steel Insulated Bottle|
+|Bulgaria                                      |YouTube Men's Vintage Tank|
+|Canada                                        |Sport Bag          |
+|Canada                                        |Google Men's Short Sleeve Performance Badge Tee Pewter|
+|Chile                                         |Sport Bag          |
+|Colombia                                      |YouTube Men's 3/4 Sleeve Henley|
+|Denmark                                       |26 oz Double Wall Insulated Bottle|
+|Egypt                                         |Android RFID Journal|
+|France                                        |Android Lunch Kit  |
+|France                                        |Android Wool Heather Cap Heather/Black|
+|Germany                                       |Google Twill Cap   |
+|Germany                                       |Google Doodle Decal|
+|Hong Kong                                     |Nest® Learning Thermostat 3rd Gen-USA - White|
+|India                                         |YouTube Custom Decals|
+|India                                         |Keyboard DOT Sticker|
+|India                                         |Android Stretch Fit Hat Black|
+|India                                         |Android Men's Engineer Short Sleeve Tee Charcoal|
+|India                                         |Google Bongo Cupholder Bluetooth Speaker|
+|India                                         |YouTube Men's Vintage Henley|
+|Indonesia                                     |Google Rucksack    |
+|Ireland                                       |YouTube RFID Journal|
+|Ireland                                       |Google Laptop Backpack|
+|Israel                                        |YouTube Hard Cover Journal|
+|Japan                                         |Google Lunch Bag   |
+|Maldives                                      |Google Men's Performance Full Zip Jacket Black|
+|Mexico                                        |Nest® Cam Indoor Security Camera - USA|
+|Mexico                                        |YouTube Men's Vintage Henley|
+|Netherlands                                   |Android Men's Vintage Tank|
+|Romania                                       |8 pc Android Sticker Sheet|
+|Singapore                                     |Google Men's Short Sleeve Performance Badge Tee Navy|
+|South Korea                                   |Galaxy Screen Cleaning Cloth|
+|Sweden                                        |Google Women's Short Sleeve Hero Tee Sky Blue|
+|Switzerland                                   |YouTube Men's 3/4 Sleeve Henley|
+|Taiwan                                        |Google Men's Performance 1/4 Zip Pullover Heather/Black|
+|Taiwan                                        |Google Women's Short Sleeve Hero Tee Black|
+|Thailand                                      |26 oz Double Wall Insulated Bottle|
+|United Kingdom                                |Android Hard Cover Journal|
+|United States                                 |SPF-15 Slim & Slender Lip Balm|
+|Vietnam                                       |YouTube RFID Journal|
 
 
 
