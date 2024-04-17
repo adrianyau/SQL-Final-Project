@@ -1,6 +1,6 @@
 Question 1: 
 
-How many 'Performance Wear' items are listed for sale between genders?
+How many 'Performance Wear' items are listed for sale between men and women?
 
 SQL Queries:
 
@@ -28,11 +28,16 @@ GROUP BY v2_product_category
 
 Answer: 
 
-There are 14 items under Men's Performance Wear and there are 13 items under Women's Performance Wear.
+|product_category_by_gender|num_of_performance_wear_items|
+|--------------------------|-----------------------------|
+|Home/Apparel/Women's/Women's-Performance Wear/|13                           |
+|Home/Apparel/Men's/Men's-Performance Wear/|14                           |
+
+
 
 Question 2: 
 
-Of all 'Accessories', rank the 'Top-10' most expensive items in USD.
+Of all products categorized as 'Accessories', rank the 'Top-10' most expensive items in USD.
 
 SQL Queries:
 
@@ -57,21 +62,24 @@ Answer:
 
 These are the Top-10 Accessory Items according to its product price in USD:
 
-Google Phone Sanitizer at 97 USD, 
-Google Phone Sanitizer at 78 USD, 
-UpCycled Handlebar Bag at 59 USD, 
-Google Four Color EDC Flashlight at 59 USD, 
-Google Flashlight at 59 USD, 
-upCycled Bike Saddle Bag at 49 USD, 
-Google Flashlight at 47 USD, 
-26 oz Double Wall Insulated Bottle at 24 USD, 
-20 oz Stainless Steel Insulated Tumbler at 24 USD, and 
-Android 24 oz Contigo Bottle at 23 USD.
+|v2_product_name|concat|rank|
+|---------------|------|----|
+|Google Phone Sanitizer|97 USD|1   |
+|Google Phone Sanitizer|78 USD|2   |
+|UpCycled Handlebar Bag|59 USD|3   |
+|Google Four Color EDC Flashlight|59 USD|3   |
+|Google Flashlight|59 USD|3   |
+|UpCycled Bike Saddle Bag|49 USD|6   |
+|Google Flashlight|47 USD|7   |
+|26 oz Double Wall Insulated Bottle|24 USD|8   |
+|20 oz Stainless Steel Insulated Tumbler|24 USD|8   |
+|Android 24 oz Contigo Bottle|23 USD|10  |
+
 
 
 Question 3: 
 
-For context, the sentiment score is a number that tells how words elicit emotional responses and opinions whether 'positive', 'negative', or 'neutral'.  For the sake of this exercise, a sentiment score of 0.5 or above is considered a sign of 'positive' feedback on a scale between -1.0 and 1.0.  Find 'Water Bottles' that have a sentiment score above 0.5.
+For context, the sentiment score is a number that tells how words elicit emotional responses and opinions whether 'positive', 'negative', or 'neutral'.  For the sake of this exercise, let us consider a sentiment score of 0.5 or above as a sign of 'positive' feedback on a scale between -1.0 and 1.0.  Find water bottle products that have a sentiment score above 0.5.
 
 SQL Queries:
 
@@ -86,12 +94,10 @@ ORDER BY sentiment_score DESC
 
 Answer:
 
-#1. 22 oz Water Bottle, 
-SKU: GGOEGDHC018299, 
-Sentiment Score: 0.9
+There are 2 Water Bottles that have a sentiment score above 0.5:
 
-#2. 22 oz Water Bottle, 
-SKU: GGOEGAAX0074, 
-Sentiment Score: 0.7
+|name         |sku |sentiment_score|
+|-------------|----|---------------|
+|22 oz Water Bottle|GGOEGDHC018299|0.9            |
+|22 oz Water Bottle|GGOEGAAX0074|0.7            |
 
-There are 2 Water Bottles that have a sentiment score above 0.5.
