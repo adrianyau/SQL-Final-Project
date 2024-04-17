@@ -305,7 +305,7 @@ The top category for each country is as follows:
 
 
 
-I find that it was difficult to find a pattern in the product categories because there was still missing information from cities, countries, or both.  I would think that the product category can change between cities and countries should the missing information be received.
+I found that it was difficult to find a pattern in the product categories because there was still missing information from cities, countries, or both.  I would think that the product category could change between cities and countries should the missing information be received.
 
 
 
@@ -538,7 +538,7 @@ Here is the summary of the revenue impact generated from each country:
 |Israel        |32         |
 |Switzerland   |16         |
 
-While it was easier to draw the 'revenue' data from the 'analytics' table, there is information on the 'unit_sold' and 'unit_price' to calculate the revenue.  To see the variance:
+While it was easier to draw the 'revenue' data from the 'analytics' table, there was information available on the 'unit_sold' and 'unit_price' to calculate the revenue.  To see the variance:
 
 ```sql
 /* Comparision between 'revenue' column versus calculated revenue by 'units_sold' * 'unit_price' by city. */
