@@ -148,8 +148,8 @@ Before:
 |name|
 |----|
 |Recycled Paper Journal Set|
-|   Learning Thermostat 3rd Gen-USA - White|
-|   Men's Short Sleeve Hero Tee Charcoal|
+ | Learning Thermostat 3rd Gen-USA - White|
+ | Men's Short Sleeve Hero Tee Charcoal|
 |22 oz  Bottle Infuser|
 |Android 17oz Stainless Steel Sport Bottle|
 
