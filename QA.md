@@ -5,7 +5,7 @@ What are your risk areas? Identify and describe them.
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
 
-1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.  In addition, some product SKUs do not exist under the 'products' table, and the product names and product categories are not aligned.
+1. As the products' SKUs were identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.  The NULL values suggested that there are no such products, and these product SKUs demonstrated that the product name and product category do not align.
 
 ```sql
 SELECT p.sku, als.product_sku AS unidentified_sku, als.v2_product_name, als.v2_product_category
@@ -36,7 +36,7 @@ SELECT product_sku, v2_product_name, v2_product_category, page_title
 FROM all_sessions
 WHERE product_sku ='9180751'
 ```
-It appears that searching the product in the 'all_sessions' table as per page title does not correlate with the product.
+It appeared that searching this product in the 'all_sessions' table as per page title did not correlate with the product.
 
 |product_sku|v2_product_name|v2_product_category                |page_title|
 |-----------|---------------|-----------------------------------|----------|
@@ -45,7 +45,7 @@ It appears that searching the product in the 'all_sessions' table as per page ti
 
 
 
-2. Some information on cities and countries or not set nor available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.  For example, a country could have different cities, and cities could have the same names in different countries (e.g., Vancouver, BC, CAN, and Vancouver, WA, USA).  Therefore, WHERE() clause was used to filter out missing city and country information.
+2. Some information on cities and countries were not set nor available in the dataset, so it was difficult to determine item and sales information without knowing where the products were purchased, or where was it specifically purchased within a country.  For example, a country could have different cities, and cities could have the same names in different countries (e.g., Vancouver, BC, CAN, and Vancouver, WA, USA).  Therefore, WHERE() clause was used to filter out missing city and country information.
 
 ``` sql
 SELECT city, country
@@ -92,7 +92,7 @@ FROM analytics
 /* Total rows: 1,739,308 */
 ```
 
-4. There are some products that cannot be set or categorized.  The WHERE() clause should filter out these uncategorized products.
+4. There were some products that could not be set or categorized.  The WHERE() clause should filter out these uncategorized products.
 
    ```sql
    SELECT v2_product_category
@@ -107,7 +107,7 @@ FROM analytics
 
 
 
-5. Under 'product_quantity', 'product_price, and 'product_revenue', the calculation of the product revenue ('product_quantity' * 'product_price) does not equal to the 'product_revenue' on the 'all_sessions' table.
+5. Under 'product_quantity', 'product_price, and 'product_revenue', the calculation of the product revenue ('product_quantity' * 'product_price) did not equal to the 'product_revenue' on the 'all_sessions' table.
 
    ```sql
    SELECT (product_quantity * product_price / 1000000) AS calc_product_revenue, product_revenue / 1000000 AS product_revenue
