@@ -26,7 +26,7 @@ It was evident in the database because of similar products within web pages.  Fr
 There were missing Product SKUs, which did not correspond with the e-commerce sales of certain products.  It could lead to inaccurate information on how to track product information and which products are being sold more successfully than others. Some cities and countries were not provided in the data set, which could skew results searching for sales information by geography.
 
 3. Inconsistent Data:
-Specifically, dataset was provided for product price, product quantity, and product revenue, but the calculations for product revenue derived from multiplying product price by product quantity did not match with the product revenue provided.  Further investigation would be needed to validate the data provided.
+Specifically, dataset was provided for product price, product quantity, and product revenue, but the calculations for product revenue derived from multiplying product price by product quantity did not match with the product revenue provided.  Further investigation would be needed to ensure data validity.
 
 ## Challenges 
 - Time is not on our side, as we are given up to 5 days to complete the SQL Final Project.
