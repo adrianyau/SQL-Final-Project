@@ -62,6 +62,7 @@ FROM analytics
 |2017-07-05|
 |2017-07-05|
 
+```sql
 SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
 FROM all_sessions
 ```
