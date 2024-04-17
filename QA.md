@@ -36,7 +36,7 @@ SELECT product_sku, v2_product_name, v2_product_category, page_title
 FROM all_sessions
 WHERE product_sku ='9180751'
 ```
-It appeared that searching this product in the 'all_sessions' table as per page title did not correlate with the product.
+It appeared that searching for this product in the 'all_sessions' table as per page title did not correlate with the product name.
 
 |product_sku|v2_product_name|v2_product_category                |page_title|
 |-----------|---------------|-----------------------------------|----------|
