@@ -21,7 +21,7 @@ Below, provide the SQL queries you used to clean your data.
    WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL 
    ```
 
-   |unit_price|
+|unit_price|
 |----------|
 |249       |
 |249       |
