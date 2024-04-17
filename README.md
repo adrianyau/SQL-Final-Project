@@ -29,7 +29,7 @@ The project is to showcase our SQL fundamentals and knowledge of SQL queries to 
 - Ambiguity of questions being asked to answer as it depends on our individual responses and the validity of our reasoning to the audience.
 - Putting the lectures and modules learned daily to use from the Bootcamp to simulate real-life practices that could potentially involve in tackling on an enormous dataset.
 - Getting used to reading the error messages flagged by pgAdmin 4 and understand what they mean.
-- Figuring out how to input SQL code in proper sequence to get the data output.  With long lists of code, it can be difficult to pin down data entry mistakes and typos.
+- Figuring out how to input SQL code in proper sequence to get the data output.  With long lists of code, it can be tedious to pin down data entry mistakes and typos.
 
 ## Future Goals
 - Better use of time and efficiencies to gather, sort, and obtain the results under time constraint.
