@@ -79,31 +79,40 @@ FROM all_sessions
 
 3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove excess spaces whether leading, trailing, and in between text, it will be as follows:
 
-   ```sql
-   SELECT TRIM(from name), AS product_description
-   FROM sales_report
-   ```
+```sql
+SELECT TRIM(from name) AS product_description
+FROM sales_report
+```
+|product_description|
+|-------------------|
+|Recycled Paper Journal Set|
+|Learning Thermostat 3rd Gen-USA - White|
+|Men's Short Sleeve Hero Tee Charcoal|
+|22 oz  Bottle Infuser|
+|Android 17oz Stainless Steel Sport Bottle|
+
+
 
 4.  In the 'page_path_level1' column, the '/' was added at the end of the string to keep consistency of page paths:
 
-    ```sql
-    SELECT CASE
-       WHEN page_path_level1 LIKE '%/' THEN page_path_level1
-       ELSE CONCAT(page_path_level1,'/')
-       END AS page_path_level1
+```sql
+SELECT CASE
+	WHEN page_path_level1 LIKE '%/' THEN page_path_level1
+	ELSE CONCAT(page_path_level1,'/')
+	END AS page_path_level1
 	FROM all_sessions
-    ```
+```
 
 5.  The time is shown in numerical format, so the data was converted to 'Hour:Minute:Second' format as follows:
 
-    ```sql
-    SELECT CAST(TO_TIMESTAMP(time) AS time)
-    FROM all_sessions
+```sql
+SELECT CAST(TO_TIMESTAMP(time) AS time)
+FROM all_sessions
 
-    SELECT CAST(TO_TIMESTAMP(time_on_site) AS time_on_site)
-    FROM all_sessions
-    WHERE time_on_site IS NOT NULL
-    ```
+SELECT CAST(TO_TIMESTAMP(time_on_site) AS time_on_site)
+FROM all_sessions
+WHERE time_on_site IS NOT NULL
+```
 
     
 
