@@ -5,16 +5,44 @@ What are your risk areas? Identify and describe them.
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
 
-1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.  In addition, there could be the same product SKU for the same product, but named differently.
+1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.  In addition, some product SKUs do not exist under the 'products' table, and the product names and product categories are not aligned.
 
 ```sql
-SELECT p.sku, als.product_sku, p.name, als.v2_product_name, als.v2_product_category
+SELECT p.sku, als.product_sku AS unidentified_sku, als.v2_product_name, als.v2_product_category
 FROM all_sessions als
-FULL OUTER JOIN products p
+LEFT JOIN products p
 	ON als.product_sku = p.sku
 WHERE p.sku IS NULL
 GROUP BY p.sku, als.product_sku, v2_product_name, v2_product_category
+LIMIT 10
 ```
+
+|sku|unidentified_sku|v2_product_name                    |v2_product_category|
+|---|----------------|-----------------------------------|-------------------|
+|NULL|10 31023        |YouTube Unstructured Cap - Charcoal|YouTube            |
+|NULL|10 52233        |Sports Water Bottle                |Drinkware          |
+|NULL|10 52237        |24oz USA Made Aluminum Bottle      |Drinkware          |
+|NULL|9180751         |Android 24 oz Contigo Bottle       |(not set)          |
+|NULL|9180752         |Android 24 oz Contigo Bottle       |(not set)          |
+|NULL|9180760         |Electronics Accessory Pouch        |(not set)          |
+|NULL|9180761         |Large Zipper Top Tote Bag          |(not set)          |
+|NULL|9180788         |Insulated Bottle                   |(not set)          |
+|NULL|9180797         |Google 22 oz Water Bottle          |(not set)          |
+|NULL|9180801         |Engraved Ceramic Google Mug        |(not set)          |
+
+```sql
+/* Take product SKU 9180751 "Android 24 oz Contigo Bottle" as an example. */
+SELECT product_sku, v2_product_name, v2_product_category, page_title
+FROM all_sessions
+WHERE product_sku ='9180751'
+/* It appears that searching the product as per page title does not correlate with the product. */
+```
+|product_sku|v2_product_name|v2_product_category                |page_title|
+|-----------|---------------|-----------------------------------|----------|
+|9180751    |Android 24 oz Contigo Bottle|(not set)                          |Google Laptop and Cell Phone Stickers|
+|9180751    |Android 24 oz Contigo Bottle|(not set)                          |Android Baby Essentials Baby Set|
+
+
 
 2. Some information on cities and countries or not set nor available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.  For example, a country could have different cities, and cities could have the same names in different countries (e.g., Vancouver, BC, CAN, and Vancouver, WA, USA).
 
