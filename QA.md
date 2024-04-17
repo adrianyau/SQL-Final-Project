@@ -5,7 +5,7 @@ What are your risk areas? Identify and describe them.
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
 
-1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if products with legitimate SKUs are being sold.
+1. As the products' SKUs are identified as primary keys under the 'products' tables, it was joined with the 'all_sessions' table to cross-reference and see if there were valid products.
 
 ```sql
 SELECT p.sku, als.product_sku, p.name, als.v2_product_name, als.v2_product_category
@@ -16,7 +16,7 @@ WHERE p.sku IS NULL
 GROUP BY p.sku, als.product_sku, v2_product_name, v2_product_category
 ```
 
-2. Some information on cities and countries or not set nor available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.
+2. Some information on cities and countries or not set nor available in the dataset, so it can be difficult to determine item and sales information without knowing where the products are purchased, or where is it specifically purchased within a certain country.  For example, a country could have different cities, and cities could have the same names in different countries (e.g., Vancouver, BC, CAN, and Vancouver, WA, USA).
 
 ``` sql
 SELECT city
@@ -28,7 +28,7 @@ FROM all_sessions
 WHERE country != '(not set)'
 ```
 
-3. In the 'analytics' table where it tracks website information data, duplications can occur because user can double-click on a page link, re-click on a page link if the website does not respond, mistakenly clicked on a page link, or even clicking back and forth between page links.  To remove such duplications, the DISTINCT() function was used:
+3. In the 'analytics' table where it tracks website information data, there was a ton of redudant data.  To remove such duplications, the DISTINCT() function was used:
 
  ```sql
 SELECT *
