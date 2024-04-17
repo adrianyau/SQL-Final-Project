@@ -189,11 +189,13 @@ SELECT
 FROM all_sessions als
 JOIN city_sum_of_orders cso
 	ON als.visit_id = cso.visit_id
+JOIN products p
+	ON als.product_sku = p.sku
 WHERE als.city != '(not set)' AND als.city != 'not available in demo dataset' AND als.v2_product_category != '(not set)' AND als.v2_product_category != '${escCatTitle}'
 GROUP BY als.city, als.v2_product_category, cso.sum_of_orders
 )
 
-SELECT ts.city, ts.v2_product_category
+SELECT ts.city, ts.v2_product_category AS top_product_category
 FROM top_product_categories_by_city ts
 WHERE rank = 1
 
@@ -219,7 +221,7 @@ WHERE als.country != '(not set)' AND als.v2_product_category != '(not set)' AND 
 GROUP BY als.country, als.v2_product_category, cso.sum_of_orders
 )
 
-SELECT ts.country, ts.v2_product_category
+SELECT ts.country, ts.v2_product_category AS top_product_category
 FROM top_product_categories_by_country ts
 WHERE rank = 1
 ```
@@ -228,78 +230,78 @@ Answer:
 
 The top product category for each city is as follows:
 
-|city          |v2_product_category|
-|--------------|-------------------|
-|Ann Arbor     |Home/Apparel/Men's/Men's-T-Shirts/|
-|Atlanta       |Home/Apparel/Men's/Men's-T-Shirts/|
-|Atlanta       |Home/Bags/         |
-|Austin        |Home/Apparel/Men's/Men's-Performance Wear/|
-|Austin        |Home/Office/Notebooks & Journals/|
-|Bangkok       |Home/Drinkware/    |
-|Berlin        |Home/Office/       |
-|Bogota        |Home/Apparel/Men's/Men's-T-Shirts/|
-|Chicago       |Home/Shop by Brand/|
-|Dallas        |Home/Shop by Brand/YouTube/|
-|Detroit       |Drinkware          |
-|Dublin        |Home/Bags/         |
-|Dublin        |Home/Shop by Brand/YouTube/|
-|Hong Kong     |Home/Apparel/Men's/Men's-T-Shirts/|
-|Hyderabad     |Home/Accessories/Stickers/|
-|Kirkland      |Home/Office/       |
-|London        |Home/Office/Notebooks & Journals/|
-|Mountain View |Home/Apparel/Men's/Men's-Outerwear/|
-|Munich        |Home/Apparel/Headgear/|
-|New York      |Home/Bags/Backpacks/|
-|Palo Alto     |Nest-USA           |
-|Paris         |Home/Shop by Brand/Android/|
-|Pittsburgh    |Home/Office/Notebooks & Journals/|
-|San Bruno     |Home/Bags/         |
-|San Francisco |Home/Apparel/Women's/Women's-T-Shirts/|
-|San Jose      |Home/Apparel/Men's/Men's-T-Shirts/|
-|Santiago      |Home/Bags/         |
-|Seattle       |Home/Nest/Nest-USA/|
-|Sunnyvale     |Housewares         |
-|Tel Aviv-Yafo |Home/Shop by Brand/YouTube/|
-|Toronto       |Home/Apparel/Headgear/|
-|Washington    |Home/Apparel/Kid's/Kid's-Infant/|
-|Zurich        |Home/Apparel/Men's/Men's-T-Shirts/|
+|city                                          |top_product_category|
+|----------------------------------------------|--------------------|
+|Ann Arbor                                     |Home/Apparel/Men's/Men's-T-Shirts/|
+|Atlanta                                       |Home/Apparel/Men's/Men's-T-Shirts/|
+|Atlanta                                       |Home/Bags/          |
+|Austin                                        |Home/Apparel/Men's/Men's-Performance Wear/|
+|Austin                                        |Home/Office/Notebooks & Journals/|
+|Bangkok                                       |Home/Drinkware/     |
+|Berlin                                        |Home/Office/        |
+|Bogota                                        |Home/Apparel/Men's/Men's-T-Shirts/|
+|Chicago                                       |Home/Shop by Brand/ |
+|Dallas                                        |Home/Shop by Brand/YouTube/|
+|Detroit                                       |Drinkware           |
+|Dublin                                        |Home/Bags/          |
+|Dublin                                        |Home/Shop by Brand/YouTube/|
+|Hong Kong                                     |Home/Apparel/Men's/Men's-T-Shirts/|
+|Hyderabad                                     |Home/Accessories/Stickers/|
+|Kirkland                                      |Home/Office/        |
+|London                                        |Home/Office/Notebooks & Journals/|
+|Mountain View                                 |Home/Apparel/Men's/Men's-Outerwear/|
+|Munich                                        |Home/Apparel/Headgear/|
+|New York                                      |Home/Bags/Backpacks/|
+|Palo Alto                                     |Nest-USA            |
+|Paris                                         |Home/Shop by Brand/Android/|
+|Pittsburgh                                    |Home/Office/Notebooks & Journals/|
+|San Francisco                                 |Home/Apparel/Women's/Women's-T-Shirts/|
+|San Jose                                      |Home/Apparel/Men's/Men's-T-Shirts/|
+|Santiago                                      |Home/Bags/          |
+|Seattle                                       |Home/Nest/Nest-USA/ |
+|Sunnyvale                                     |Housewares          |
+|Tel Aviv-Yafo                                 |Home/Shop by Brand/YouTube/|
+|Toronto                                       |Home/Apparel/Headgear/|
+|Washington                                    |Home/Apparel/Kid's/Kid's-Infant/|
+|Zurich                                        |Home/Apparel/Men's/Men's-T-Shirts/|
+
 
 
 The top category for each country is as follows:
 
-|country       |v2_product_category|
-|--------------|-------------------|
-|Australia     |Home/Accessories/Stickers/|
-|Austria       |Home/Accessories/Housewares/|
-|Belgium       |Home/Drinkware/Water Bottles and Tumblers/|
-|Bulgaria      |Home/Apparel/Men's/Men's-T-Shirts/|
-|Canada        |Home/Apparel/Headgear/|
-|Chile         |Home/Bags/         |
-|Colombia      |Home/Apparel/Men's/Men's-T-Shirts/|
-|Denmark       |Home/Drinkware/    |
-|Egypt         |Home/Shop by Brand/Android/|
-|France        |Home/Shop by Brand/Android/|
-|France        |Headgear           |
-|Germany       |Home/Apparel/Headgear/|
-|Germany       |Home/Office/       |
-|Hong Kong     |Home/Nest/Nest-USA/|
-|India         |Home/Accessories/Stickers/|
-|Indonesia     |Home/Bags/Backpacks/|
-|Ireland       |Home/Shop by Brand/YouTube/|
-|Ireland       |Home/Bags/         |
-|Israel        |Home/Shop by Brand/YouTube/|
-|Japan         |Home/Accessories/  |
-|Maldives      |Home/Apparel/Men's/Men's-Outerwear/|
-|Mexico        |Home/Nest/Nest-USA/|
-|Netherlands   |Home/Apparel/Men's/Men's-T-Shirts/|
-|South Korea   |Home/Electronics/Electronics Accessories/|
-|Sweden        |Home/Electronics/  |
-|Switzerland   |Home/Apparel/Men's/Men's-T-Shirts/|
-|Taiwan        |Home/Apparel/Men's/Men's-Performance Wear/|
-|Thailand      |Home/Drinkware/    |
-|United Kingdom|Home/Office/Notebooks & Journals/|
-|United States |Housewares         |
-|Vietnam       |Home/Shop by Brand/YouTube/|
+|country                                       |top_product_category|
+|----------------------------------------------|--------------------|
+|Australia                                     |Home/Accessories/Stickers/|
+|Austria                                       |Home/Accessories/Housewares/|
+|Belgium                                       |Home/Drinkware/Water Bottles and Tumblers/|
+|Bulgaria                                      |Home/Apparel/Men's/Men's-T-Shirts/|
+|Canada                                        |Home/Apparel/Headgear/|
+|Chile                                         |Home/Bags/          |
+|Colombia                                      |Home/Apparel/Men's/Men's-T-Shirts/|
+|Denmark                                       |Home/Drinkware/     |
+|Egypt                                         |Home/Shop by Brand/Android/|
+|France                                        |Home/Shop by Brand/Android/|
+|France                                        |Headgear            |
+|Germany                                       |Home/Apparel/Headgear/|
+|Germany                                       |Home/Office/        |
+|Hong Kong                                     |Home/Nest/Nest-USA/ |
+|India                                         |Home/Accessories/Stickers/|
+|Indonesia                                     |Home/Bags/Backpacks/|
+|Ireland                                       |Home/Shop by Brand/YouTube/|
+|Ireland                                       |Home/Bags/          |
+|Israel                                        |Home/Shop by Brand/YouTube/|
+|Japan                                         |Home/Accessories/   |
+|Maldives                                      |Home/Apparel/Men's/Men's-Outerwear/|
+|Mexico                                        |Home/Nest/Nest-USA/ |
+|Netherlands                                   |Home/Apparel/Men's/Men's-T-Shirts/|
+|South Korea                                   |Home/Electronics/Electronics Accessories/|
+|Sweden                                        |Home/Electronics/   |
+|Switzerland                                   |Home/Apparel/Men's/Men's-T-Shirts/|
+|Taiwan                                        |Home/Apparel/Men's/Men's-Performance Wear/|
+|Thailand                                      |Home/Drinkware/     |
+|United Kingdom                                |Home/Office/Notebooks & Journals/|
+|United States                                 |Housewares          |
+|Vietnam                                       |Home/Shop by Brand/YouTube/|
 
 
 
