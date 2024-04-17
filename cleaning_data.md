@@ -89,6 +89,18 @@ After:
 SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
 FROM analytics
 ```
+Before:
+
+|date|
+|----|
+|20170705|
+|20170705|
+|20170705|
+|20170705|
+|20170705|
+
+After:
+
 |date|
 |----|
 |2017-07-05|
@@ -96,11 +108,24 @@ FROM analytics
 |2017-07-05|
 |2017-07-05|
 |2017-07-05|
+```
 
 ```sql
 SELECT TO_DATE(CAST(date AS VARCHAR), 'YYYYMMDD') AS date
 FROM all_sessions
 ```
+Before:
+
+|date|
+|----|
+|20160913|
+|20170421|
+|20170312|
+|20170215|
+|20161218|
+
+After:
+
 |date|
 |----|
 |2016-09-13|
@@ -115,10 +140,22 @@ FROM all_sessions
 3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove excess spaces whether leading, trailing, and in between text, it will be as follows:
 
 ```sql
-SELECT TRIM(from name) AS product_description
+SELECT TRIM(from name) AS name
 FROM sales_report
 ```
-|product_description|
+Before:
+
+|name|
+|----|
+|Recycled Paper Journal Set|
+| Learning Thermostat 3rd Gen-USA - White|
+| Men's Short Sleeve Hero Tee Charcoal|
+|22 oz  Bottle Infuser|
+|Android 17oz Stainless Steel Sport Bottle|
+
+After:
+
+|name|
 |-------------------|
 |Recycled Paper Journal Set|
 |Learning Thermostat 3rd Gen-USA - White|
