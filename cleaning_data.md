@@ -173,7 +173,41 @@ SELECT CASE
 	ELSE CONCAT(page_path_level1,'/')
 	END AS page_path_level1
 	FROM all_sessions
+	GROUP BY page_path_level1
 ```
+Before:
+
+|page_path_level1|
+|----------------|
+|/ordercompleted.html|
+|/payment.html   |
+|/store.html/    |
+|/revieworder.html|
+|/google+redesign/|
+|/asearch.html   |
+|/storeitem.html |
+|/basket.html    |
+|/asearch.html/  |
+|/yourinfo.html  |
+|/store.html     |
+
+After:
+
+|page_path_level1|
+|----------------|
+|/ordercompleted.html/|
+|/payment.html/  |
+|/store.html/    |
+|/revieworder.html/|
+|/google+redesign/|
+|/asearch.html/  |
+|/storeitem.html/|
+|/basket.html/   |
+|/asearch.html/  |
+|/yourinfo.html/ |
+|/store.html/    |
+
+
 
 5.  The time is shown in numerical format, so the data was converted to 'Hour:Minute:Second' format as follows:
 
