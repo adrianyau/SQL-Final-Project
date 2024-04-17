@@ -55,7 +55,7 @@ Below, provide the SQL queries you used to clean your data.
     FROM all_sessions
 
     SELECT CAST(TO_TIMESTAMP(time_on_site) AS time_on_site)
-    ROM all_sessions
+    FROM all_sessions
     WHERE time_on_site IS NOT NULL
     ```
 
