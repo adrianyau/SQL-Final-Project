@@ -92,7 +92,7 @@ FROM analytics
 /* Total rows: 1,739,308 */
 ```
 
-4. There are some products that cannot be set or categorized.  The WHERE() clause should filter out the uncategorized products.
+4. There are some products that cannot be set or categorized.  The WHERE() clause should filter out these uncategorized products.
 
    ```sql
    SELECT v2_product_category
