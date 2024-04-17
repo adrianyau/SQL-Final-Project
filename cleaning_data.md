@@ -71,7 +71,9 @@ Below, provide the SQL queries you used to clean your data.
 |2017-03-12|
 |2017-02-15|
 |2016-12-18|
-   ```
+ ```
+
+
 
 3. Noticebly, it appears that there are spaces in front of the names of various products under the sales report.  To remove excess spaces whether leading, trailing, and in between text, it will be as follows:
 
