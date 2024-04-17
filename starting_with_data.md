@@ -60,7 +60,7 @@ GROUP BY als.v2_product_name, product_price, als.currency_code
 LIMIT 10
 )
 
-SELECT v2_product_name, CONCAT(product_price::TEXT,' ',currency_code), rank
+SELECT v2_product_name, CONCAT(product_price::TEXT,' ',currency_code) AS price_usd, rank
 FROM accessory_rank
 ```
 
@@ -68,18 +68,18 @@ Answer:
 
 These are the Top-10 Accessory Items according to its product price in USD:
 
-|v2_product_name                               |concat|rank|
-|----------------------------------------------|------|----|
-|Google Four Color EDC Flashlight              |59 USD|1   |
-|Google Flashlight                             |59 USD|1   |
-|UpCycled Handlebar Bag                        |59 USD|1   |
-|UpCycled Bike Saddle Bag                      |49 USD|4   |
-|Google Flashlight                             |47 USD|5   |
-|26 oz Double Wall Insulated Bottle            |24 USD|6   |
-|20 oz Stainless Steel Insulated Tumbler       |24 USD|6   |
-|Yoga Mat                                      |22 USD|8   |
-|Basecamp Explorer Powerbank Flashlight        |22 USD|8   |
-|Suitcase Organizer Cubes                      |21 USD|10  |
+|v2_product_name|price_usd                                                |rank|
+|---------------|---------------------------------------------------------|----|
+|Google Four Color EDC Flashlight|59 USD                                                   |1   |
+|Google Flashlight|59 USD                                                   |1   |
+|UpCycled Handlebar Bag|59 USD                                                   |1   |
+|UpCycled Bike Saddle Bag|49 USD                                                   |4   |
+|Google Flashlight|47 USD                                                   |5   |
+|26 oz Double Wall Insulated Bottle|24 USD                                                   |6   |
+|20 oz Stainless Steel Insulated Tumbler|24 USD                                                   |6   |
+|Yoga Mat       |22 USD                                                   |8   |
+|Basecamp Explorer Powerbank Flashlight|22 USD                                                   |8   |
+|Suitcase Organizer Cubes|21 USD                                                   |10  |
 
 
 
