@@ -214,11 +214,28 @@ After:
 ```sql
 SELECT CAST(TO_TIMESTAMP(time) AS time)
 FROM all_sessions
-
-SELECT CAST(TO_TIMESTAMP(time_on_site) AS time_on_site)
-FROM all_sessions
-WHERE time_on_site IS NOT NULL
 ```
+
+Before:
+
+|to_timestamp|
+|------------|
+|01:56:53    |
+|18:42:27    |
+|09:03:22    |
+|18:24:15    |
+|16:00:00    |
+
+After:
+
+|to_timestamp|
+|------------|
+|01:56:53    |
+|18:42:27    |
+|09:03:22    |
+|18:24:15    |
+|16:00:00    |
+
 
     
 
