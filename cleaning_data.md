@@ -8,9 +8,9 @@ Below, provide the SQL queries you used to clean your data.
 
 1. As per cleaning hint in the 'cleaning_data.md' file, the unit cost needs to be divided by 1,000,000.  Also, given that revenue is derived from the unit cost multiply by number of units sold, it will need to be converted from the millions as well. Therefore:
    
-   ```sql
-   SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
-   FROM analytics
+```sql
+SELECT CAST(unit_price AS REAL) / 1000000 AS unit_price
+FROM analytics
 
 |unit_price|
 |----------|
@@ -21,8 +21,8 @@ Below, provide the SQL queries you used to clean your data.
 |199       |
 
 
-   SELECT CAST(product_price AS REAL) / 1000000 AS product_price
-   FROM all_sessions
+SELECT CAST(product_price AS REAL) / 1000000 AS product_price
+FROM all_sessions
 
 |product_price|
 |-------------|
@@ -32,10 +32,10 @@ Below, provide the SQL queries you used to clean your data.
 |76.99        |
 |109.99       |
 
-   SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
-   transaction_revenue / 1000000 AS transaction_revenue
-   FROM all_sessions
-   WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL
+SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
+transaction_revenue / 1000000 AS transaction_revenue
+FROM all_sessions
+WHERE total_transaction_revenue IS NOT NULL AND transaction_revenue IS NOT NULL AND product_revenue IS NOT NULL
 
 |total_transaction_revenue|product_revenue|transaction_revenue|
 |-------------------------|---------------|-------------------|
