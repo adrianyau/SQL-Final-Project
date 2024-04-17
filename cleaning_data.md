@@ -150,7 +150,7 @@ Before:
 |22 oz  Bottle Infuser|
 |Android 17oz Stainless Steel Sport Bottle|
 
-***markdown cannot pick up the lead space, so the period '.' is a representation of the spacing
+Note: markdown cannot pick up the lead space, so the underscore '_' is a representation of the space in the original data.
 
 After:
 
