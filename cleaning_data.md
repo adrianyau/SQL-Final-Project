@@ -40,21 +40,21 @@ Before:
 
 |product_price|
 |-------------|
-|2.99         |
-|98.99        |
-|24.99        |
-|76.99        |
-|109.99       |
-
-After:
-
-|product_price|
-|-------------|
 |2990000      |
 |98990000     |
 |24990000     |
 |76990000     |
 |109990000    |
+
+After:
+
+|product_price|
+|-------------|
+|2.99         |
+|98.99        |
+|24.99        |
+|76.99        |
+|109.99       |
 
 ```sql
 SELECT total_transaction_revenue / 1000000 AS total_transaction_revenue, product_revenue / 1000000 AS product_revenue,
