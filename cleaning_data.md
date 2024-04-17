@@ -48,7 +48,7 @@ Below, provide the SQL queries you used to clean your data.
 	FROM all_sessions
     ```
 
-5.  The times are shown in numerical format, so the data was convered to Hour:Minute:Second format as follows:
+5.  The time is shown in numerical format, so the data was convered to 'Hour:Minute:Second' format as follows:
 
     ```sql
     SELECT CAST(TO_TIMESTAMP(time) AS time)
