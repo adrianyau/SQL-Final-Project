@@ -511,7 +511,7 @@ Here is the summary of the revenue impact generated from each country:
 |Israel        |32         |
 |Switzerland   |16         |
 
-While it was easier to draw the 'revenue' data from the 'analytics' table, there is information on the 'unit_sold' and 'unit_price' to calculate the revenue.  To see the difference:
+While it was easier to draw the 'revenue' data from the 'analytics' table, there is information on the 'unit_sold' and 'unit_price' to calculate the revenue.  To see the variance:
 
 ```sql
 /* Comparision between 'revenue' column versus calculated revenue by 'units_sold' * 'unit_price' by city. */
